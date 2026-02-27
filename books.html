@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books - Alex Morgan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Books - Silence of Scribes</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">AM</span>
+                <img src="" data-img="logo" alt="Silence of Scribes" class="nav-logo-img">
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Portfolio</a></li>
@@ -27,15 +27,9 @@
     </nav>
 
     <div class="animated-bg">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
         <div class="star"></div>
     </div>
 
@@ -48,120 +42,93 @@
 
     <section class="books-section">
         <div class="container">
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="fantasy">Fantasy</button>
-                <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
-                <button class="filter-btn" data-filter="thriller">Thriller</button>
-                <button class="filter-btn" data-filter="mystery">Mystery</button>
+
+            <!-- ══════════════════════════════════════════
+                 BOOK 1 — Surviving in the Freezing Apocalypse
+            ══════════════════════════════════════════ -->
+            <div class="book-featured glass-card scroll-reveal">
+                <div class="book-featured-cover">
+                    <img src="" data-img="survivingCover" alt="Surviving in the Freezing Apocalypse with My Alpha">
+                    <div class="book-featured-badges">
+                        <span class="book-status status-hiatus">On Hiatus</span>
+                    </div>
+                </div>
+                <div class="book-featured-info">
+                    <div class="book-platform-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        WebNovel
+                    </div>
+                    <h2 class="book-featured-title">Surviving in the Freezing Apocalypse with My Alpha</h2>
+
+                    <div class="book-genres-row">
+                        <span class="book-genre">Romance</span>
+                        <span class="book-genre">Fantasy</span>
+                        <span class="book-genre">Mystery</span>
+                        <span class="book-genre">Action</span>
+                    </div>
+
+                    <div class="book-stats-row">
+                        <div class="book-stat">
+                            <span class="stat-icon">👁</span>
+                            <span class="stat-value">58.1K</span>
+                            <span class="stat-label">Views</span>
+                        </div>
+                        <div class="book-stat">
+                            <span class="stat-icon">📖</span>
+                            <span class="stat-value">48</span>
+                            <span class="stat-label">Chapters</span>
+                        </div>
+                        <div class="book-stat">
+                            <span class="stat-icon">⏸</span>
+                            <span class="stat-value">Hiatus</span>
+                            <span class="stat-label">Status</span>
+                        </div>
+                    </div>
+
+                    <div class="book-synopsis">
+                        <h4>Synopsis</h4>
+                        <p>The world was fine—until it wasn't. One day, the temperature plummeted, and a frost storm swept through the city. Those who suffered from frostbite… changed. Their veins turned icy blue, their eyes vacant, their humanity erased. The Frostborn were born.</p>
+                        <p>'Ava' never thought her biggest concern would be survival. One moment, she was an ordinary high school girl, secretly crushing on 'Liam Carter'—the school's football captain and top bachelor. The next, she was running for her life, the walls of her school turning into a frozen tomb.</p>
+                        <p>When the storm traps them inside, tensions rise. Romance ignites. And as the ice spreads, so do secrets. Liam has a past buried in the snow, and Ava soon learns that surviving the cold isn't the only thing she has to fear. Because when the world freezes over, hearts burn the brightest. But will hers survive the frost?</p>
+                    </div>
+
+                    <div class="book-tags-row">
+                        <span class="book-tag-pill">#BEAUTY</span>
+                        <span class="book-tag-pill">#CAMPUS</span>
+                        <span class="book-tag-pill">#DRAMATIC</span>
+                        <span class="book-tag-pill">#APOCALYPSE</span>
+                        <span class="book-tag-pill">#FASTPACED</span>
+                        <span class="book-tag-pill">#ALPHA</span>
+                        <span class="book-tag-pill">#CRUSH</span>
+                        <span class="book-tag-pill">#COOLGUY</span>
+                        <span class="book-tag-pill">#SUPERSTAR</span>
+                    </div>
+
+                    <div class="book-featured-actions">
+                        <a href="https://www.webnovel.com/book/surviving-in-the-freezing-apocalypse-with-my-alpha_30808945305907005" target="_blank" class="btn btn-primary">Read on WebNovel →</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="books-grid" id="booksGrid">
-                <div class="book-card glass-card" data-genre="fantasy">
-                    <div class="book-cover">
-                        <img src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Shadow Realm">
-                        <div class="book-overlay">
-                            <button class="btn btn-primary btn-small">Read More</button>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <span class="book-genre">Fantasy</span>
-                        <h3 class="book-title">The Shadow Realm</h3>
-                        <p class="book-summary">In a world where shadows possess their own consciousness, a young mage must navigate the dark realm to save her village from eternal darkness.</p>
-                        <div class="book-meta">
-                            <span class="book-chapters">24 Chapters</span>
-                            <span class="book-status status-completed">Completed</span>
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </section>
 
-                <div class="book-card glass-card" data-genre="sci-fi">
-                    <div class="book-cover">
-                        <img src="https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Echoes of Tomorrow">
-                        <div class="book-overlay">
-                            <button class="btn btn-primary btn-small">Read More</button>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <span class="book-genre">Sci-Fi</span>
-                        <h3 class="book-title">Echoes of Tomorrow</h3>
-                        <p class="book-summary">A time-traveling scientist discovers that every change to the past creates echoes that threaten to unravel the fabric of reality itself.</p>
-                        <div class="book-meta">
-                            <span class="book-chapters">32 Chapters</span>
-                            <span class="book-status status-completed">Completed</span>
-                        </div>
-                    </div>
+    <!-- AUTHOR BIO -->
+    <section class="author-bio-section">
+        <div class="container">
+            <div class="author-bio-card glass-card scroll-reveal">
+                <div class="author-bio-img-wrap">
+                    <img src="" data-img="authorAvatar" alt="Silence of Scribes" class="author-bio-img">
+                    <div class="author-bio-glow"></div>
                 </div>
-
-                <div class="book-card glass-card" data-genre="thriller">
-                    <div class="book-cover">
-                        <img src="https://images.pexels.com/photos/1121960/pexels-photo-1121960.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Last Witness">
-                        <div class="book-overlay">
-                            <button class="btn btn-primary btn-small">Read More</button>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <span class="book-genre">Thriller</span>
-                        <h3 class="book-title">The Last Witness</h3>
-                        <p class="book-summary">When the only witness to a high-profile murder disappears, a detective must race against time to uncover the truth before it's buried forever.</p>
-                        <div class="book-meta">
-                            <span class="book-chapters">28 Chapters</span>
-                            <span class="book-status status-completed">Completed</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="book-card glass-card" data-genre="fantasy">
-                    <div class="book-cover">
-                        <img src="https://images.pexels.com/photos/2859169/pexels-photo-2859169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Crown of Thorns">
-                        <div class="book-overlay">
-                            <button class="btn btn-primary btn-small">Read More</button>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <span class="book-genre">Fantasy</span>
-                        <h3 class="book-title">Crown of Thorns</h3>
-                        <p class="book-summary">A reluctant heir must claim her thorned crown and unite warring kingdoms before an ancient evil awakens to consume them all.</p>
-                        <div class="book-meta">
-                            <span class="book-chapters">36 Chapters</span>
-                            <span class="book-status status-ongoing">Ongoing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="book-card glass-card" data-genre="mystery">
-                    <div class="book-cover">
-                        <img src="https://images.pexels.com/photos/3283219/pexels-photo-3283219.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Whispers in the Fog">
-                        <div class="book-overlay">
-                            <button class="btn btn-primary btn-small">Read More</button>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <span class="book-genre">Mystery</span>
-                        <h3 class="book-title">Whispers in the Fog</h3>
-                        <p class="book-summary">In a fog-shrouded coastal town, a journalist investigates a series of disappearances that lead to a century-old conspiracy.</p>
-                        <div class="book-meta">
-                            <span class="book-chapters">22 Chapters</span>
-                            <span class="book-status status-completed">Completed</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="book-card glass-card" data-genre="sci-fi">
-                    <div class="book-cover">
-                        <img src="https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Neon Horizons">
-                        <div class="book-overlay">
-                            <button class="btn btn-primary btn-small">Read More</button>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <span class="book-genre">Sci-Fi</span>
-                        <h3 class="book-title">Neon Horizons</h3>
-                        <p class="book-summary">In a cyberpunk megacity, a hacker uncovers a corporate conspiracy that threatens the lives of millions in the lower districts.</p>
-                        <div class="book-meta">
-                            <span class="book-chapters">18 Chapters</span>
-                            <span class="book-status status-ongoing">Ongoing</span>
-                        </div>
+                <div class="author-bio-content">
+                    <span class="author-label">About the Author</span>
+                    <h2 class="author-bio-name">Silence of Scribes</h2>
+                    <p class="author-bio-text">Hello! My name is Waddle, also known as "Silence_of_Scribes." I have been writing on WebNovel and other platforms since 2023, with a total writing experience of three years. Currently, I am an established author on WebNovel.</p>
+                    <p class="author-bio-text">When I'm not crafting stories, I design book covers for other authors — bringing characters and worlds to life visually. Find my work on Fiverr, or read my stories on WebNovel.</p>
+                    <div class="author-bio-links">
+                        <a href="https://www.webnovel.com/author/Silence_of_Scribes" target="_blank" class="btn btn-primary">Read on WebNovel</a>
+                        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
                     </div>
                 </div>
             </div>
@@ -170,15 +137,17 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Alex Morgan. All rights reserved.</p>
+            <p>&copy; 2025 Silence of Scribes. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">LinkedIn</a>
+                <a href="https://www.instagram.com/silenceofscribes/" target="_blank" class="social-link">Instagram</a>
+                <a href="https://youtube.com/@silenceofscribes" target="_blank" class="social-link">YouTube</a>
+                <a href="https://www.fiverr.com/s/bd6y12N" target="_blank" class="social-link">Fiverr</a>
+                <a href="https://www.webnovel.com/author/Silence_of_Scribes" target="_blank" class="social-link">WebNovel</a>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="/main.js"></script>
+    <script src="./images.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
