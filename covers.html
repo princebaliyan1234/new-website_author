@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Covers - Alex Morgan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Book Covers - Silence of Scribes</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">AM</span>
+                <img src="" data-img="logo" alt="Silence of Scribes" class="nav-logo-img">
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Portfolio</a></li>
@@ -19,23 +19,15 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
     <div class="animated-bg">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
+        <div class="star"></div><div class="star"></div><div class="star"></div>
         <div class="star"></div>
     </div>
 
@@ -46,119 +38,214 @@
         </div>
     </section>
 
-    <section class="covers-section">
+    <!-- ① GET YOUR COVER -->
+    <section class="get-cover-section">
         <div class="container">
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="fantasy">Fantasy</button>
-                <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
-                <button class="filter-btn" data-filter="thriller">Thriller</button>
-                <button class="filter-btn" data-filter="romance">Romance</button>
+            <div class="get-cover-header scroll-reveal">
+                <h2 class="section-title">Get Your Cover Designed</h2>
+                <p class="get-cover-intro">Love what you see? Let me craft the perfect cover for your story.</p>
             </div>
-
-            <div class="covers-grid" id="coversGrid">
-                <div class="cover-item" data-category="fantasy">
-                    <img src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Shadow Realm">
-                    <div class="cover-overlay">
-                        <h3>The Shadow Realm</h3>
-                        <span class="cover-tag">Fantasy</span>
+            <div class="gig-cards-grid">
+                <div class="gig-card glass-card scroll-reveal">
+                    <div class="gig-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="gig-content">
+                        <span class="gig-tag">Illustrated</span>
+                        <h3>Illustrated Book Covers</h3>
+                        <p>Stunning hand-crafted illustrated covers with rich detail, vivid characters, and epic scenes — perfect for fantasy, sci-fi, and beyond.</p>
+                        <ul class="gig-features">
+                            <li>Custom character &amp; scene illustration</li>
+                            <li>High-res print &amp; digital formats</li>
+                            <li>Multiple revision rounds</li>
+                        </ul>
+                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-primary btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
-
-                <div class="cover-item" data-category="sci-fi">
-                    <img src="https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Neon Dreams">
-                    <div class="cover-overlay">
-                        <h3>Neon Dreams</h3>
-                        <span class="cover-tag">Sci-Fi</span>
+                <div class="gig-card glass-card scroll-reveal">
+                    <div class="gig-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            <line x1="9" y1="7" x2="15" y2="7"/>
+                            <line x1="9" y1="11" x2="15" y2="11"/>
+                        </svg>
+                    </div>
+                    <div class="gig-content">
+                        <span class="gig-tag">WebNovel</span>
+                        <h3>WebNovel Covers</h3>
+                        <p>Eye-catching covers tailored specifically for WebNovel platform dimensions and aesthetics — designed to stand out and attract readers.</p>
+                        <ul class="gig-features">
+                            <li>WebNovel-optimised dimensions</li>
+                            <li>Genre-matching visual style</li>
+                            <li>Fast turnaround</li>
+                        </ul>
+                        <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-primary btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
-
-                <div class="cover-item" data-category="thriller">
-                    <img src="https://images.pexels.com/photos/1121960/pexels-photo-1121960.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Last Witness">
-                    <div class="cover-overlay">
-                        <h3>The Last Witness</h3>
-                        <span class="cover-tag">Thriller</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="fantasy">
-                    <img src="https://images.pexels.com/photos/2859169/pexels-photo-2859169.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Crown of Thorns">
-                    <div class="cover-overlay">
-                        <h3>Crown of Thorns</h3>
-                        <span class="cover-tag">Fantasy</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="romance">
-                    <img src="https://images.pexels.com/photos/1415559/pexels-photo-1415559.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Love in Bloom">
-                    <div class="cover-overlay">
-                        <h3>Love in Bloom</h3>
-                        <span class="cover-tag">Romance</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="sci-fi">
-                    <img src="https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Echoes of Tomorrow">
-                    <div class="cover-overlay">
-                        <h3>Echoes of Tomorrow</h3>
-                        <span class="cover-tag">Sci-Fi</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="thriller">
-                    <img src="https://images.pexels.com/photos/3283219/pexels-photo-3283219.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Whispers in the Fog">
-                    <div class="cover-overlay">
-                        <h3>Whispers in the Fog</h3>
-                        <span class="cover-tag">Thriller</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="fantasy">
-                    <img src="https://images.pexels.com/photos/3061217/pexels-photo-3061217.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dragon's Quest">
-                    <div class="cover-overlay">
-                        <h3>Dragon's Quest</h3>
-                        <span class="cover-tag">Fantasy</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="sci-fi">
-                    <img src="https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Neon Horizons">
-                    <div class="cover-overlay">
-                        <h3>Neon Horizons</h3>
-                        <span class="cover-tag">Sci-Fi</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="romance">
-                    <img src="https://images.pexels.com/photos/1767434/pexels-photo-1767434.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Summer Hearts">
-                    <div class="cover-overlay">
-                        <h3>Summer Hearts</h3>
-                        <span class="cover-tag">Romance</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="thriller">
-                    <img src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dark Secrets">
-                    <div class="cover-overlay">
-                        <h3>Dark Secrets</h3>
-                        <span class="cover-tag">Thriller</span>
-                    </div>
-                </div>
-
-                <div class="cover-item" data-category="fantasy">
-                    <img src="https://images.pexels.com/photos/3394022/pexels-photo-3394022.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mystic Realms">
-                    <div class="cover-overlay">
-                        <h3>Mystic Realms</h3>
-                        <span class="cover-tag">Fantasy</span>
-                    </div>
+            </div>
+            <div class="scroll-hint scroll-reveal">
+                <span>Scroll down to see my portfolio</span>
+                <div class="scroll-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <polyline points="19 12 12 19 5 12"/>
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <span class="divider-label">My Portfolio</span>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ② HOW I MAKE COVERS -->
+    <section class="covers-category-section">
+        <div class="container">
+            <div class="category-header scroll-reveal">
+                <div class="category-title-row">
+                    <div class="category-icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-heading">How I Make Covers</h2>
+                </div>
+            </div>
+            <div class="process-banner glass-card scroll-reveal" onclick="openLightbox(IMAGES.processbanner,'My Cover Design Process — Character Design → Environment &amp; Mood → Final Cover with Typography')">
+                <img src="" data-img="processbanner" alt="Cover design process">
+                <div class="process-banner-overlay"><span>🔍 Click to enlarge</span></div>
+            </div>
+            <p class="process-caption scroll-reveal">Every cover starts with the character, then the world they inhabit, then the perfect typography to bring it all together.</p>
+        </div>
+    </section>
+
+    <!-- ③ WEBNOVEL COVERS -->
+    <section class="covers-category-section">
+        <div class="container">
+            <div class="category-header scroll-reveal">
+                <div class="category-title-row">
+                    <div class="category-icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-heading">WebNovel Covers</h2>
+                </div>
+                <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-secondary btn-category-order">Get One Like This →</a>
+            </div>
+
+            <!-- Red Void Ascension switcher -->
+            <div class="cover-featured-switcher glass-card scroll-reveal">
+                <div class="cover-switcher-main">
+                    <img src="" data-img="redVoid1" alt="Red Void Ascension" id="rvaCoverMain" class="cover-switcher-img" onclick="openLightbox(this.src,'Red Void Ascension')">
+                    <div class="cover-switcher-zoom-hint">Click to enlarge</div>
+                </div>
+                <div class="cover-switcher-sidebar">
+                    <div class="cover-switcher-info">
+                        <span class="cover-switcher-tag">WebNovel Cover</span>
+                        <h3 class="cover-switcher-title">Red Void Ascension</h3>
+                        <p class="cover-switcher-desc">Two cover versions for this dark fantasy — a silver-haired warrior stepping through a blood-red void, demons of crimson chaos swirling around her. Each version explores a different angle: dramatic close-up intensity vs full-body epic scale.</p>
+                    </div>
+                    <div class="cover-switcher-thumbs-label">Choose a version:</div>
+                    <div class="cover-switcher-thumbs">
+                        <div class="cover-thumb-card active" onclick="switchCover('rvaCoverMain', this, IMAGES.redVoid1, 'Red Void Ascension — Version 1')">
+                            <img src="" data-img="redVoid1" alt="Version 1">
+                            <span>Version 1</span>
+                        </div>
+                        <div class="cover-thumb-card" onclick="switchCover('rvaCoverMain', this, IMAGES.redVoid2, 'Red Void Ascension — Version 2')">
+                            <img src="" data-img="redVoid2" alt="Version 2">
+                            <span>Version 2</span>
+                        </div>
+                    </div>
+                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-primary" style="margin-top:1.5rem;">Get One Like This →</a>
+                </div>
+            </div>
+
+            <!-- Villainess x Villain switcher -->
+            <div class="cover-featured-switcher glass-card scroll-reveal" style="margin-top:2.5rem;">
+                <div class="cover-switcher-main">
+                    <img src="" data-img="vxv1" alt="Villainess x Villain" id="vxvCoverMain" class="cover-switcher-img" onclick="openLightbox(this.src,'Villainess x Villain')">
+                    <div class="cover-switcher-zoom-hint">Click to enlarge</div>
+                </div>
+                <div class="cover-switcher-sidebar">
+                    <div class="cover-switcher-info">
+                        <span class="cover-switcher-tag">WebNovel Cover</span>
+                        <h3 class="cover-switcher-title">Villainess x Villain</h3>
+                        <p class="cover-switcher-desc"><em>"they are obsessed with each other"</em></p>
+                        <p class="cover-switcher-desc">Three cover versions for this dark fantasy romance — from thorned rose elegance to glowing dark magic. Each tells the same story of obsession in a different light.</p>
+                    </div>
+                    <div class="cover-switcher-thumbs-label">Choose a version:</div>
+                    <div class="cover-switcher-thumbs">
+                        <div class="cover-thumb-card active" onclick="switchCover('vxvCoverMain', this, IMAGES.vxv1, 'Villainess x Villain — Version 1')">
+                            <img src="" data-img="vxv1" alt="Version 1">
+                            <span>Version 1</span>
+                        </div>
+                        <div class="cover-thumb-card" onclick="switchCover('vxvCoverMain', this, IMAGES.vxv2, 'Villainess x Villain — Version 2')">
+                            <img src="" data-img="vxv2" alt="Version 2">
+                            <span>Version 2</span>
+                        </div>
+                        <div class="cover-thumb-card" onclick="switchCover('vxvCoverMain', this, IMAGES.vxv3, 'Villainess x Villain — Version 3')">
+                            <img src="" data-img="vxv3" alt="Version 3">
+                            <span>Version 3</span>
+                        </div>
+                    </div>
+                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-primary" style="margin-top:1.5rem;">Get One Like This →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ ILLUSTRATED COVERS -->
+    <section class="covers-category-section">
+        <div class="container">
+            <div class="category-header scroll-reveal">
+                <div class="category-title-row">
+                    <div class="category-icon-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-heading">Illustrated Covers</h2>
+                </div>
+                <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order">Get One Like This →</a>
+            </div>
+
+            <div class="covers-grid covers-grid-4">
+                <div class="cover-item cover-item-featured" onclick="openLightbox(IMAGES.lastSun,'The Last Sun — Illustrated Cover')">
+                    <img src="" data-img="lastSun" alt="The Last Sun">
+                    <div class="cover-overlay"><h3>The Last Sun</h3><span class="cover-tag">Illustrated</span></div>
+                    <div class="cover-description-pill">A lone rider beneath a setting sun, the ghostly silhouette of a winged face looming over the horizon — epic, cinematic, unforgettable.</div>
+                </div>
+                <div class="cover-item cover-item-featured" onclick="openLightbox(IMAGES.nightwatcher,'The Nightwatcher — Illustrated Cover for Collin Illiad')">
+                    <img src="" data-img="nightwatcher" alt="The Nightwatcher">
+                    <div class="cover-overlay"><h3>The Nightwatcher</h3><span class="cover-tag">Illustrated</span></div>
+                    <div class="cover-description-pill">A cloaked guardian stands before a towering teal-lit structure — mysterious, atmospheric, and hauntingly beautiful.</div>
+                </div>
+                <div class="cover-item cover-item-featured" onclick="openLightbox(IMAGES.ashCityOps,'Ash City Ops — Illustrated Cover for Night Writer')">
+                    <img src="" data-img="ashCityOps" alt="Ash City Ops">
+                    <div class="cover-overlay"><h3>Ash City Ops</h3><span class="cover-tag">Illustrated</span></div>
+                    <div class="cover-description-pill">A lone gunman walks through burning ruins beneath a colossal shadow — explosive orange and purple tones for a post-apocalyptic world on fire.</div>
+                </div>
+                <div class="cover-item cover-item-featured" onclick="openLightbox(IMAGES.callerBeasts,'Caller of the Beasts — Illustrated Cover for Apothecary')">
+                    <img src="" data-img="callerBeasts" alt="Caller of the Beasts">
+                    <div class="cover-overlay"><h3>Caller of the Beasts</h3><span class="cover-tag">Illustrated</span></div>
+                    <div class="cover-description-pill">A summoner faces a colossal dragon against a blazing red sky — fireballs, ember-filled air, and raw epic fantasy energy.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
-            <span class="lightbox-close">&times;</span>
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
             <img src="" alt="" id="lightboxImage">
             <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
@@ -166,15 +253,40 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Alex Morgan. All rights reserved.</p>
+            <p>&copy; 2025 Silence of Scribes. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">LinkedIn</a>
+                <a href="https://www.instagram.com/silenceofscribes/" target="_blank" class="social-link">Instagram</a>
+                <a href="https://youtube.com/@silenceofscribes" target="_blank" class="social-link">YouTube</a>
+                <a href="https://www.fiverr.com/s/bd6y12N" target="_blank" class="social-link">Fiverr</a>
+                <a href="https://www.webnovel.com/author/Silence_of_Scribes" target="_blank" class="social-link">WebNovel</a>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="/main.js"></script>
+    <script src="./images.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        function openLightbox(src, caption) {
+            document.getElementById('lightboxImage').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+        function switchCover(imgId, card, src, caption) {
+            document.getElementById(imgId).src = src;
+            card.closest('.cover-switcher-thumbs').querySelectorAll('.cover-thumb-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+        }
+    </script>
 </body>
 </html>
