@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan - Author & Cover Designer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Silence of Scribes - Author & Cover Designer</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="loading">
+    <div id="loader">
+        <div class="loader-orb loader-orb-1"></div>
+        <div class="loader-orb loader-orb-2"></div>
+        <div class="loader-quill">
+            <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="quill-path"
+                    d="M50 10 C70 15, 90 35, 85 60 C80 80, 65 90, 50 110 C35 90, 20 80, 15 60 C10 35, 30 15, 50 10 Z"
+                    stroke="#ff6b35" stroke-width="2" fill="rgba(255,107,53,0.08)"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="quill-path"
+                    d="M50 110 L45 118 M50 110 L55 118"
+                    stroke="#ff8c50" stroke-width="1.5" stroke-linecap="round"/>
+                <path class="quill-path"
+                    d="M50 20 L50 100 M50 40 C42 50, 25 52, 20 58 M50 40 C58 50, 75 52, 80 58 M50 60 C43 68, 28 70, 22 74 M50 60 C57 68, 72 70, 78 74"
+                    stroke="rgba(255,107,53,0.4)" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="loader-text">
+            <div class="loader-title">Silence of Scribes</div>
+            <div class="loader-subtitle">Author &amp; Cover Designer</div>
+        </div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar"></div>
+        </div>
+        <div class="loader-tagline">crafting worlds, one word at a time</div>
+    </div>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">AM</span>
+                <img src="" data-img="logo" alt="Silence of Scribes" class="nav-logo-img">
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link active">Portfolio</a></li>
@@ -40,10 +66,10 @@
     </div>
 
     <section class="hero" id="hero">
-        <div class="hero-content">
+        <div class="hero-content container">
             <div class="hero-text">
                 <h1 class="hero-title fade-in">
-                    Hi <span class="wave-hand">👋</span>, I'm Alex Morgan
+                    Hi <span class="wave-hand">👋</span>, I'm <span class="brand-name">Silence of Scribes</span>
                     <span class="rotating-star">✨</span>
                 </h1>
                 <p class="hero-subtitle fade-in-delay-1">Author & Book Cover Designer</p>
@@ -59,7 +85,7 @@
             <div class="hero-image-container">
                 <div class="profile-glow"></div>
                 <div class="profile-image-wrapper">
-                    <img src="https://images.pexels.com/photos/3779448/pexels-photo-3779448.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alex Morgan" class="profile-image parallax-image">
+                    <img src="" data-img="authorAvatar" alt="Silence of Scribes" class="profile-image parallax-image">
                     <div class="floating-pointer pointer-1">Author</div>
                     <div class="floating-pointer pointer-2">Cover Designer</div>
                     <div class="floating-pointer pointer-3">Storyteller</div>
@@ -76,17 +102,17 @@
                 <div class="glass-card scroll-reveal">
                     <div class="card-icon">📚</div>
                     <h3>Published Author</h3>
-                    <p>6+ novels across fantasy, sci-fi, and thriller genres with readers worldwide.</p>
+                    <p>Stories across fantasy, romance, sci-fi and thriller genres — with thousands of readers on WebNovel.</p>
                 </div>
                 <div class="glass-card scroll-reveal">
                     <div class="card-icon">🎨</div>
                     <h3>Cover Designer</h3>
-                    <p>Created 50+ stunning book covers for indie authors and publishers.</p>
+                    <p>Creating stunning illustrated & WebNovel covers for authors and publishers on Fiverr.</p>
                 </div>
                 <div class="glass-card scroll-reveal">
-                    <div class="card-icon">⭐</div>
-                    <h3>Award Winner</h3>
-                    <p>Recognized for excellence in storytelling and visual design artistry.</p>
+                    <div class="card-icon">🐧</div>
+                    <h3>The Scribe's Corner</h3>
+                    <p>Follow my journey on Instagram, YouTube and WebNovel — stories, designs, and more.</p>
                 </div>
             </div>
         </div>
@@ -98,34 +124,34 @@
             <div class="work-grid">
                 <div class="work-card glass-card scroll-reveal">
                     <div class="work-image">
-                        <img src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Shadow Realm">
+                        <img src="" data-img="survivingCover" alt="Surviving in the Freezing Apocalypse with My Alpha">
                     </div>
                     <div class="work-content">
-                        <span class="work-tag">Novel</span>
-                        <h3>The Shadow Realm</h3>
-                        <p>A dark fantasy epic about a realm where shadows come alive.</p>
+                        <span class="work-tag">Novel — WebNovel</span>
+                        <h3>Surviving in the Freezing Apocalypse with My Alpha</h3>
+                        <p>A romance-fantasy survival story set in a world where a deadly frost storm turns people into the Frostborn.</p>
                         <a href="books.html" class="work-link">Read More →</a>
                     </div>
                 </div>
                 <div class="work-card glass-card scroll-reveal">
                     <div class="work-image">
-                        <img src="https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Neon Dreams Cover">
+                        <img src="" data-img="lastSun" alt="The Last Sun Cover">
                     </div>
                     <div class="work-content">
-                        <span class="work-tag">Cover Design</span>
-                        <h3>Neon Dreams</h3>
-                        <p>Cyberpunk cover design for a sci-fi thriller series.</p>
+                        <span class="work-tag">Cover Design — Illustrated</span>
+                        <h3>The Last Sun</h3>
+                        <p>An epic illustrated cover featuring a silhouetted rider beneath a grand twilight sky and a ghostly figure above.</p>
                         <a href="covers.html" class="work-link">View Gallery →</a>
                     </div>
                 </div>
                 <div class="work-card glass-card scroll-reveal">
                     <div class="work-image">
-                        <img src="https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Echoes of Tomorrow">
+                        <img src="" data-img="vxv1" alt="Villainess x Villain">
                     </div>
                     <div class="work-content">
-                        <span class="work-tag">Novel</span>
-                        <h3>Echoes of Tomorrow</h3>
-                        <p>A time-bending thriller that explores the nature of destiny.</p>
+                        <span class="work-tag">Cover Design — WebNovel</span>
+                        <h3>Villainess x Villain</h3>
+                        <p>A dark fantasy romance about two obsessed souls on opposing sides — beautifully dangerous and utterly captivating.</p>
                         <a href="books.html" class="work-link">Read More →</a>
                     </div>
                 </div>
@@ -135,15 +161,17 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Alex Morgan. All rights reserved.</p>
+            <p>&copy; 2025 Silence of Scribes. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">LinkedIn</a>
+                <a href="https://www.instagram.com/silenceofscribes/" target="_blank" class="social-link">Instagram</a>
+                <a href="https://youtube.com/@silenceofscribes" target="_blank" class="social-link">YouTube</a>
+                <a href="https://www.fiverr.com/s/bd6y12N" target="_blank" class="social-link">Fiverr</a>
+                <a href="https://www.webnovel.com/author/Silence_of_Scribes" target="_blank" class="social-link">WebNovel</a>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="/main.js"></script>
+    <script src="./images.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
