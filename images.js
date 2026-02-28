@@ -14,7 +14,7 @@ window.IMAGES = {
     redVoid2:       'images/red-void-ascension.png',
     lastSun:        'images/visual-hirearchy-last-sun.png',
     nightwatcher:   'images/The-nightwatcher.jpg',
-    ashCityOps:     'images/ash-city-ops.png',
+    ashCityOps:     'images/aco.png',
     callerBeasts:   'images/caller-of-the-beasts-5.png',
     processbanner:  'images/webnovel-gig-thumbnail.jpg',
 };
