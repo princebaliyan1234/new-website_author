@@ -1,0 +1,15 @@
+# netlify.toml — place this in the ROOT of your project
+
+[build]
+  # No build command needed — it's plain HTML/CSS/JS
+  publish = "."          # your HTML files are in the root
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Redirect /api/* to Netlify Functions
+[[redirects]]
+  from   = "/api/*"
+  to     = "/.netlify/functions/:splat"
+  status = 200
