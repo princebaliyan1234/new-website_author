@@ -3,31 +3,29 @@
 //  All paths match your actual files in the /images/ folder.
 //  If you rename a file, just update the path here — done.
 // ============================================================
-
 window.IMAGES = {
-
     // ── Branding ─────────────────────────────────────────────
-    logo:           'images/sos logo.png',
+    logo:           'images/sos-logo.png',
     authorAvatar:   'images/peng.webp',
 
     // ── Book covers (your own books) ─────────────────────────
     survivingCover: 'images/1739386302852.jpeg',
 
     // ── WebNovel cover designs ────────────────────────────────
-    vxv1:           'images/villainess x villain - 1.png',
-    vxv2:           'images/villainess x villain - 2.png',
-    vxv3:           'images/villainess x villain - 3.png',
-    redVoid1:       'images/red void ascension - 1.png',
-    redVoid2:       'images/red void ascension.png',
+    vxv1:           'images/villainess-x-villain-1.png',
+    vxv2:           'images/villainess-x-villain-2.png',
+    vxv3:           'images/villainess-x-villain-3.png',
+    redVoid1:       'images/red-void-ascension-1.png',
+    redVoid2:       'images/red-void-ascension.png',
 
     // ── Illustrated covers ────────────────────────────────────
-    lastSun:        'images/visial hirearchy last sun.png',
-    nightwatcher:   'images/The nightwatcher.jpg',
-    ashCityOps:     'images/ash city ops.png',
-    callerBeasts:   'images/caller of the beasts (5).png',
+    lastSun:        'images/visual-hirearchy-last-sun.png',
+    nightwatcher:   'images/The-nightwatcher.jpg',
+    ashCityOps:     'images/ash-city-ops.png',
+    callerBeasts:   'images/caller-of-the-beasts-5.png',
 
     // ── Process / gig thumbnails ─────────────────────────────
-    processbanner:  'images/webnovel gig thumbnail.jpg',
+    processbanner:  'images/webnovel-gig-thumbnail.jpg',
 };
 
 // ── Apply images to every [data-img] element on the page ─────
