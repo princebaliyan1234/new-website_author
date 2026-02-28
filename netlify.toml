@@ -1,8 +1,7 @@
 # netlify.toml — place this in the ROOT of your project
 
 [build]
-  # No build command needed — it's plain HTML/CSS/JS
-  publish = "."          # your HTML files are in the root
+  publish = "."
   functions = "netlify/functions"
 
 [functions]
@@ -13,3 +12,9 @@
   from   = "/api/*"
   to     = "/.netlify/functions/:splat"
   status = 200
+
+# Fix Content Security Policy — allows your inline scripts and images to load
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://api.resend.com;"
