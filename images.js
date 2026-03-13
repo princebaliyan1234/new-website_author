@@ -12,6 +12,10 @@ window.IMAGES = {
     vxv3:           'images/villainess-x-villain-3.png',
     redVoid1:       'images/red-void-ascension-1.png',
     redVoid2:       'images/red-void-ascension.png',
+    queenShadows1:  'images/Queen of Broken Shadows.jpg',   // ← add your file here
+    queenShadows2:  'images/queen-of-broken-shadows-2.jpg', // ← add version 2 file here
+    poisonedIce1:   'images/Poisoned Ice Obsession.png',  // ← add your file here
+    poisonedIce2:   'images/poisoned-ice-obsession-2.jpg',  // ← add version 2 file here
     lastSun:        'images/visual-hirearchy-last-sun.png',
     nightwatcher:   'images/The-nightwatcher.jpg',
     ashCityOps:     'images/aco.png',
