@@ -14,7 +14,7 @@ window.IMAGES = {
     redVoid2:       'images/red-void-ascension.png',
     queenShadows1:  'images/queen-of-broken-shadows.jpg',   // ← add your file here
     queenShadows2:  'images/queen-of-broken-shadows-2.jpg', // ← add version 2 file here
-    poisonedIce1:   'images/poisoned-ice-obsession-1.jpg',  // ← add your file here
+    poisonedIce1:   'images/Poisoned-Ice-Obsession.png',
     poisonedIce2:   'images/poisoned-ice-obsession-2.jpg',  // ← add version 2 file here
     lastSun:        'images/visual-hirearchy-last-sun.png',
     nightwatcher:   'images/The-nightwatcher.jpg',
