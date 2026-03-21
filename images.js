@@ -12,15 +12,25 @@ window.IMAGES = {
     vxv3:           'images/villainess-x-villain-3.png',
     redVoid1:       'images/red-void-ascension-1.png',
     redVoid2:       'images/red-void-ascension.png',
-    queenShadows1:  'images/Queen of Broken Shadows.jpg',   // ← add your file here
+    queenShadows1:  'images/queen-of-broken-shadows.jpg',   // ← add your file here
     queenShadows2:  'images/queen-of-broken-shadows-2.jpg', // ← add version 2 file here
-    poisonedIce1:   'images/Poisoned Ice Obsession.png',  // ← add your file here
+    poisonedIce1:   'images/poisoned-ice-obsession-1.jpg',  // ← add your file here
     poisonedIce2:   'images/poisoned-ice-obsession-2.jpg',  // ← add version 2 file here
     lastSun:        'images/visual-hirearchy-last-sun.png',
     nightwatcher:   'images/The-nightwatcher.jpg',
     ashCityOps:     'images/aco.png',
     callerBeasts:   'images/caller-of-the-beasts-5.png',
-    processbanner:  'images/webnovel-gig-thumbnail.jpg',
+    processbanner:       'images/webnovel-gig-thumbnail.jpg',
+    // End World Tutorial [LitRPG]
+    endWorld1:           'images/end-world-tutorial-1.png',  // blue ocean version
+    endWorld2:           'images/end-world-tutorial-2.png',  // red tentacle version
+    endWorld3:           'images/end-world-tutorial-3.png',  // orange fire version
+    // The Dao of Reincarnation
+    daoReincarnation1:   'images/dao-of-reincarnation-1.png', // solo white bg version
+    daoReincarnation2:   'images/dao-of-reincarnation-2.png', // infinity symbol version
+    daoReincarnation3:   'images/dao-of-reincarnation-3.png', // spiral tunnel version
+    // Cultivating in Seclusion
+    cultivatingSeclusion1: 'images/cultivating-in-seclusion.png',
 };
 
 function applyImages() {
