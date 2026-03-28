@@ -595,16 +595,6 @@
 
                 <!-- Cover grid -->
                 <div class="cg-grid" id="illustratedGrid">
-                    <div class="cg-card" data-cover="lastSun" onclick="cgSelect('illustrated','lastSun',this)">
-                        <div class="cg-thumb"><img src="" data-img="lastSun" alt="The Last Sun"></div>
-                        <div class="cg-name">The Last Sun</div>
-                        <div class="cg-sub">Illustrated</div>
-                    </div>
-                    <div class="cg-card" data-cover="nightwatcher" onclick="cgSelect('illustrated','nightwatcher',this)">
-                        <div class="cg-thumb"><img src="" data-img="nightwatcher" alt="The Nightwatcher"></div>
-                        <div class="cg-name">The Nightwatcher</div>
-                        <div class="cg-sub">Illustrated</div>
-                    </div>
                     <div class="cg-card" data-cover="ashCityOps" onclick="cgSelect('illustrated','ashCityOps',this)">
                         <div class="cg-thumb"><img src="" data-img="ashCityOps" alt="Ash City Ops"></div>
                         <div class="cg-name">Ash City Ops</div>
@@ -613,6 +603,16 @@
                     <div class="cg-card" data-cover="callerBeasts" onclick="cgSelect('illustrated','callerBeasts',this)">
                         <div class="cg-thumb"><img src="" data-img="callerBeasts" alt="Caller of the Beasts"></div>
                         <div class="cg-name">Caller of the Beasts</div>
+                        <div class="cg-sub">Illustrated</div>
+                    </div>
+                    <div class="cg-card" data-cover="lastSun" onclick="cgSelect('illustrated','lastSun',this)">
+                        <div class="cg-thumb"><img src="" data-img="lastSun" alt="The Last Sun"></div>
+                        <div class="cg-name">The Last Sun</div>
+                        <div class="cg-sub">Illustrated</div>
+                    </div>
+                    <div class="cg-card" data-cover="nightwatcher" onclick="cgSelect('illustrated','nightwatcher',this)">
+                        <div class="cg-thumb"><img src="" data-img="nightwatcher" alt="The Nightwatcher"></div>
+                        <div class="cg-name">The Nightwatcher</div>
                         <div class="cg-sub">Illustrated</div>
                     </div>
                 </div>
@@ -705,30 +705,35 @@
 
                 <!-- Cover grid -->
                 <div class="cg-grid" id="webnovelGrid">
-                    <div class="cg-card" data-cover="redVoid1" onclick="cgSelect('webnovel','redVoid1',this)">
-                        <div class="cg-thumb"><img src="" data-img="redVoid1" alt="Red Void Ascension"></div>
-                        <div class="cg-name">Red Void Ascension</div>
-                        <div class="cg-sub">WebNovel Cover</div>
-                    </div>
-                    <div class="cg-card" data-cover="vxv1" onclick="cgSelect('webnovel','vxv1',this)">
-                        <div class="cg-thumb"><img src="" data-img="vxv1" alt="Villainess x Villain"></div>
-                        <div class="cg-name">Villainess x Villain</div>
-                        <div class="cg-sub">WebNovel Cover</div>
+                    <div class="cg-card" data-cover="godsBlessing1" onclick="cgSelect('webnovel','godsBlessing1',this)">
+                        <div class="cg-thumb"><img src="" data-img="godsBlessing1" alt="God's Blessing"></div>
+                        <div class="cg-name">God's Blessing</div>
+                        <div class="cg-sub">WebNovel · LitRPG</div>
                     </div>
                     <div class="cg-card" data-cover="endWorld1" onclick="cgSelect('webnovel','endWorld1',this)">
                         <div class="cg-thumb"><img src="" data-img="endWorld1" alt="End World Tutorial"></div>
                         <div class="cg-name">End World Tutorial</div>
                         <div class="cg-sub">WebNovel · LitRPG</div>
                     </div>
+                    <div class="cg-card" data-cover="cultivatingSeclusion1" onclick="cgSelect('webnovel','cultivatingSeclusion1',this)">
+                        <div class="cg-thumb"><img src="" data-img="cultivatingSeclusion1" alt="Cultivating in Seclusion"></div>
+                        <div class="cg-name">Cultivating in Seclusion</div>
+                        <div class="cg-sub">WebNovel · Cultivation</div>
+                    </div>
                     <div class="cg-card" data-cover="daoReincarnation1" onclick="cgSelect('webnovel','daoReincarnation1',this)">
                         <div class="cg-thumb"><img src="" data-img="daoReincarnation1" alt="The Dao of Reincarnation"></div>
                         <div class="cg-name">Dao of Reincarnation</div>
                         <div class="cg-sub">WebNovel · Cultivation</div>
                     </div>
-                    <div class="cg-card" data-cover="cultivatingSeclusion1" onclick="cgSelect('webnovel','cultivatingSeclusion1',this)">
-                        <div class="cg-thumb"><img src="" data-img="cultivatingSeclusion1" alt="Cultivating in Seclusion"></div>
-                        <div class="cg-name">Cultivating in Seclusion</div>
-                        <div class="cg-sub">WebNovel · Cultivation</div>
+                    <div class="cg-card" data-cover="vxv1" onclick="cgSelect('webnovel','vxv1',this)">
+                        <div class="cg-thumb"><img src="" data-img="vxv1" alt="Villainess x Villain"></div>
+                        <div class="cg-name">Villainess x Villain</div>
+                        <div class="cg-sub">WebNovel Cover</div>
+                    </div>
+                    <div class="cg-card" data-cover="redVoid1" onclick="cgSelect('webnovel','redVoid1',this)">
+                        <div class="cg-thumb"><img src="" data-img="redVoid1" alt="Red Void Ascension"></div>
+                        <div class="cg-name">Red Void Ascension</div>
+                        <div class="cg-sub">WebNovel Cover</div>
                     </div>
                 </div>
             </div>
@@ -889,6 +894,17 @@
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
                 versions: [
                     { key: 'cultivatingSeclusion1', label: 'Version 1' }
+                ]
+            },
+            godsBlessing1: {
+                tag: 'WebNovel Cover · LitRPG',
+                title: "God's Blessing: Every Stream Donation I Get 10X Stats",
+                desc: 'A charismatic streamer wields godlike power as divine gifts flood in live — stream UI overlays, SP donations from Agni and Anubis, level-ups and quests all firing at once. Three versions explore blue ice, snowy dark, and fiery warm palettes.',
+                fiverr: 'https://www.fiverr.com/s/akLWRGG',
+                versions: [
+                    { key: 'godsBlessing1', label: 'Version 1' },
+                    { key: 'godsBlessing2', label: 'Version 2' },
+                    { key: 'godsBlessing3', label: 'Version 3' }
                 ]
             }
         };
