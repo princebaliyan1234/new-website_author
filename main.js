@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-        // Close when a link is clicked
         navMenu.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -54,18 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Scroll-reveal (IntersectionObserver) ─────────────────────────────
+    // Exposed as window._revealObserver so projects.js can observe new cards
     const reveals = document.querySelectorAll('.scroll-reveal');
-    if (reveals.length) {
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active', 'revealed');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-        reveals.forEach(el => revealObserver.observe(el));
-    }
+    window._revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active', 'revealed');
+                window._revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => window._revealObserver.observe(el));
 
     // ── Animated stars ────────────────────────────────────────────────────
     const stars = document.querySelectorAll('.star');
