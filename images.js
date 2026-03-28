@@ -31,6 +31,10 @@ window.IMAGES = {
     daoReincarnation3:   'images/dao-of-reincarnation-3.png', // spiral tunnel version
     // Cultivating in Seclusion
     cultivatingSeclusion1: 'images/cultivating-in-seclusion.png',
+    // God's Blessing: Every Stream Donation I Get 10X Stats
+    godsBlessing1:  'images/gods-blessing-1.png',  // main cover (blue ice sword)
+    godsBlessing2:  'images/gods-blessing-2.png',  // version 2 (snowy scythe)
+    godsBlessing3:  'images/gods-blessing-3.png',  // version 3 (fire/warm tone)
 };
 
 function applyImages() {
