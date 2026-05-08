@@ -12,29 +12,41 @@ window.IMAGES = {
     vxv3:           'images/villainess-x-villain-3.png',
     redVoid1:       'images/red-void-ascension-1.png',
     redVoid2:       'images/red-void-ascension.png',
-    queenShadows1:  'images/queen-of-broken-shadows.jpg',   // ← add your file here
-    queenShadows2:  'images/queen-of-broken-shadows-2.jpg', // ← add version 2 file here
+    queenShadows1:  'images/Queen-of-Broken-Shadows.jpg',
+    queenShadows2:  'images/queen-of-broken-shadows-2.jpg',
     poisonedIce1:   'images/Poisoned-Ice-Obsession.png',
-    poisonedIce2:   'images/poisoned-ice-obsession-2.jpg',  // ← add version 2 file here
+    poisonedIce2:   'images/poisoned-ice-obsession-2.jpg',
     lastSun:        'images/visual-hirearchy-last-sun.png',
     nightwatcher:   'images/The-nightwatcher.jpg',
     ashCityOps:     'images/aco.png',
     callerBeasts:   'images/caller-of-the-beasts-5.png',
-    processbanner:       'images/webnovel-gig-thumbnail.jpg',
+    processbanner:  'images/webnovel-gig-thumbnail.jpg',
     // End World Tutorial [LitRPG]
-    endWorld1:           'images/end-world-tutorial-1.png',  // blue ocean version
-    endWorld2:           'images/end-world-tutorial-2.png',  // red tentacle version
-    endWorld3:           'images/end-world-tutorial-3.png',  // orange fire version
+    endWorld1:      'images/end-world-tutorial-1.png',
+    endWorld2:      'images/end-world-tutorial-2.png',
+    endWorld3:      'images/end-world-tutorial-3.png',
     // The Dao of Reincarnation
-    daoReincarnation1:   'images/dao-of-reincarnation-1.png', // solo white bg version
-    daoReincarnation2:   'images/dao-of-reincarnation-2.png', // infinity symbol version
-    daoReincarnation3:   'images/dao-of-reincarnation-3.png', // spiral tunnel version
+    daoReincarnation1: 'images/dao-of-reincarnation-1.png',
+    daoReincarnation2: 'images/dao-of-reincarnation-2.png',
+    daoReincarnation3: 'images/dao-of-reincarnation-3.png',
     // Cultivating in Seclusion
     cultivatingSeclusion1: 'images/cultivating-in-seclusion.png',
-    // God's Blessing: Every Stream Donation I Get 10X Stats
-    godsBlessing1:  'images/gods-blessing-1.png',  // main cover (blue ice sword)
-    godsBlessing2:  'images/gods-blessing-2.png',  // version 2 (snowy scythe)
-    godsBlessing3:  'images/gods-blessing-3.png',  // version 3 (fire/warm tone)
+    // God's Blessing
+    godsBlessing1:  'images/gods-blessing-1.png',
+    godsBlessing2:  'images/gods-blessing-2.png',
+    godsBlessing3:  'images/gods-blessing-3.png',
+    // ── NEW COVERS ──────────────────────────────────────────
+    // Angel of Darkness
+    angelOfDarkness1: 'images/angel-of-darkness.png',
+    // Level Up While I Sleep (v3 = main)
+    levelUpSleep1:  'images/level-up-while-i-sleep-1.png',
+    levelUpSleep2:  'images/level-up-while-i-sleep-2.png',
+    levelUpSleep3:  'images/level-up-while-i-sleep-3.png',
+    // Limit Breaker
+    limitBreaker1:  'images/limit-breaker.png',
+    // Demonic Streamer System (v2 = main)
+    demonicStreamer1: 'images/demonic-streamer-system-1.png',
+    demonicStreamer2: 'images/demonic-streamer-system-2.png',
 };
 
 function applyImages() {
