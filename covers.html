@@ -11,10 +11,9 @@
            TAB GALLERY — scoped styles
         ══════════════════════════════════════════ */
 
-        /* ── sticky tab bar ── */
         .cover-tabs-bar {
             position: sticky;
-            top: 72px; /* below navbar */
+            top: 72px;
             z-index: 200;
             background: rgba(10,10,10,0.92);
             backdrop-filter: blur(14px);
@@ -50,7 +49,6 @@
             white-space: nowrap;
         }
 
-        /* bottom underline indicator */
         .ctab::after {
             content: '';
             position: absolute;
@@ -71,24 +69,20 @@
             flex-shrink: 0;
         }
 
-        /* illustrated = orange (default) */
-        .ctab[data-tab="illustrated"].ctab-active { color: var(--primary-color); }
-        .ctab[data-tab="illustrated"].ctab-active::after { transform: translateX(-50%) scaleX(1); }
-
-        /* fantasy = same orange as illustrated */
-        .ctab[data-tab="fantasy"].ctab-active { color: var(--primary-color); }
-        .ctab[data-tab="fantasy"].ctab-active::after { background: var(--primary-color); transform: translateX(-50%) scaleX(1); }
-
-        /* webnovel = same orange as others */
-        .ctab[data-tab="webnovel"].ctab-active { color: var(--primary-color); }
-        .ctab[data-tab="webnovel"].ctab-active::after { background: var(--primary-color); transform: translateX(-50%) scaleX(1); }
+        /* ── Tab active colours ── */
+        /* illustrated = orange */
+        .ctab[data-tab="illustrated"].ctab-active { color: #ff6b35; }
+        .ctab[data-tab="illustrated"].ctab-active::after { background: #ff6b35; transform: translateX(-50%) scaleX(1); }
+        /* fantasy = red */
+        .ctab[data-tab="fantasy"].ctab-active { color: #f87171; }
+        .ctab[data-tab="fantasy"].ctab-active::after { background: #dc2626; transform: translateX(-50%) scaleX(1); }
+        /* webnovel = purple */
+        .ctab[data-tab="webnovel"].ctab-active { color: #a855f7; }
+        .ctab[data-tab="webnovel"].ctab-active::after { background: #a855f7; transform: translateX(-50%) scaleX(1); }
 
         .ctab.ctab-active .ctab-dot { opacity: 1; transform: scale(1.4); }
 
-        /* ── tab panels ── */
-        .ctab-panel {
-            display: none;
-        }
+        .ctab-panel { display: none; }
         .ctab-panel.ctab-panel-active {
             display: block;
             animation: ctabFadeIn 0.38s ease forwards;
@@ -99,49 +93,21 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* ── panel header accent colour overrides ── */
-        .ctab-panel[data-panel="fantasy"].ctab-active { color: var(--primary-color); }
-        .ctab[data-tab="fantasy"].ctab-active { color: var(--primary-color); }
-        .ctab[data-tab="fantasy"].ctab-active::after { background: var(--primary-color); transform: translateX(-50%) scaleX(1); }
-
-        .ctab-panel[data-panel="webnovel"] .category-heading { color: var(--primary-color); }
-        .ctab-panel[data-panel="webnovel"] .category-icon-wrap {
-            color: var(--primary-color);
-            background: rgba(255,107,53,0.1);
-            border-color: rgba(255,107,53,0.3);
-        }
-        .ctab-panel[data-panel="webnovel"] .btn-category-order {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        .ctab-panel[data-panel="webnovel"] .btn-category-order:hover {
-            background: var(--primary-color);
-            color: #fff;
-        }
-
-        /* ── mobile tab bar ── */
         @media (max-width: 600px) {
-            .cover-tabs-inner {
-                padding: 0 1rem;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
+            .cover-tabs-inner { padding: 0 1rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .ctab { padding: 0 18px; font-size: 0.72rem; }
         }
 
         /* ══════════════════════════════════════════
-           COVER TILE ANIMATIONS — float + shimmer
+           COVER TILE ANIMATIONS
         ══════════════════════════════════════════ */
 
-        /* staggered float bobbing — each card gets a different delay */
         @keyframes cgFloat {
             0%, 100% { transform: translateY(0px); }
             50%       { transform: translateY(-6px); }
         }
 
-        .cg-card {
-            animation: cgFloat 4s ease-in-out infinite;
-        }
+        .cg-card { animation: cgFloat 4s ease-in-out infinite; }
         .cg-card:nth-child(1) { animation-delay: 0s; }
         .cg-card:nth-child(2) { animation-delay: 0.6s; }
         .cg-card:nth-child(3) { animation-delay: 1.2s; }
@@ -150,34 +116,20 @@
         .cg-card:nth-child(6) { animation-delay: 0.9s; }
         .cg-card:nth-child(7) { animation-delay: 1.5s; }
         .cg-card:nth-child(8) { animation-delay: 2.1s; }
+        .cg-card:hover { animation-play-state: paused; }
 
-        /* pause float on hover so parallax + shimmer can take over */
-        .cg-card:hover {
-            animation-play-state: paused;
-        }
-
-        /* shimmer sweep — a light glare that slides across on hover */
         .cg-thumb::after {
             content: '';
             position: absolute;
             top: 0; left: -75%;
             width: 50%; height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent 0%,
-                rgba(255,255,255,0.13) 50%,
-                transparent 100%
-            );
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.13) 50%, transparent 100%);
             transform: skewX(-15deg);
             transition: none;
             pointer-events: none;
             z-index: 3;
         }
-
-        .cg-card:hover .cg-thumb::after {
-            left: 130%;
-            transition: left 0.55s ease;
-        }
+        .cg-card:hover .cg-thumb::after { left: 130%; transition: left 0.55s ease; }
 
         .cg-grid {
             display: grid;
@@ -186,83 +138,40 @@
             margin-top: 1.5rem;
         }
 
-        .cg-card {
-            cursor: pointer;
-            transition: transform 0.18s ease;
-        }
+        .cg-card { cursor: pointer; transition: transform 0.18s ease; }
         .cg-card:hover { transform: translateY(-5px); }
-        .cg-card.cg-active .cg-thumb {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 3px;
-        }
+        .cg-card.cg-active .cg-thumb { outline: 2px solid var(--primary-color); outline-offset: 3px; }
 
         .cg-thumb {
-            width: 100%;
-            aspect-ratio: 2/3;
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-            background: rgba(255,255,255,0.04);
+            width: 100%; aspect-ratio: 2/3;
+            border-radius: 6px; overflow: hidden;
+            position: relative; background: rgba(255,255,255,0.04);
         }
 
-        /* fantasy cards get the book border-radius */
-        .cg-fantasy .cg-thumb {
-            border-radius: 3px 8px 8px 3px;
-        }
-        /* book spine only on fantasy cards */
+        .cg-fantasy .cg-thumb { border-radius: 3px 8px 8px 3px; }
         .cg-fantasy .cg-thumb::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 10px;
+            content: ''; position: absolute;
+            left: 0; top: 0; bottom: 0; width: 10px;
             background: rgba(0,0,0,0.28);
             border-right: 1px solid rgba(255,255,255,0.07);
             z-index: 2;
         }
-        .cg-thumb img {
-            width: 100%; height: 100%;
-            object-fit: cover; display: block;
-            transition: transform 0.3s ease;
-        }
+        .cg-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
         .cg-card:hover .cg-thumb img { transform: scale(1.04); }
+        .cg-name { font-size: 12px; font-weight: 600; color: var(--text-primary, #fff); margin-top: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cg-sub  { font-size: 11px; color: var(--text-secondary, rgba(255,255,255,0.45)); margin-top: 2px; }
 
-        .cg-name {
-            font-size: 12px; font-weight: 600;
-            color: var(--text-primary, #fff);
-            margin-top: 8px;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
-        .cg-sub {
-            font-size: 11px;
-            color: var(--text-secondary, rgba(255,255,255,0.45));
-            margin-top: 2px;
-        }
-
-        /* fantasy tilt on grid cards */
         .cg-fantasy .cg-thumb {
             transform: perspective(600px) rotateY(-4deg);
             transform-origin: left center;
             box-shadow: -5px 5px 16px rgba(0,0,0,0.5);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .cg-fantasy:hover .cg-thumb {
-            transform: perspective(600px) rotateY(-1deg) translateY(-5px);
-            box-shadow: -8px 8px 22px rgba(0,0,0,0.6);
-        }
+        .cg-fantasy:hover .cg-thumb { transform: perspective(600px) rotateY(-1deg) translateY(-5px); box-shadow: -8px 8px 22px rgba(0,0,0,0.6); }
         .cg-fantasy:hover { transform: none; }
 
         /* ── inline detail panel ── */
-        .cg-detail {
-            display: none;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 14px;
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(12px);
-            overflow: hidden;
-            animation: cgDetailIn 0.32s ease forwards;
-        }
+        .cg-detail { display: none; margin-top: 1.5rem; margin-bottom: 0.5rem; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); overflow: hidden; animation: cgDetailIn 0.32s ease forwards; }
         .cg-detail.cg-detail-open { display: block; }
 
         @keyframes cgDetailIn {
@@ -270,161 +179,30 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        .cg-detail-inner {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-        }
-
-        .cg-detail-left {
-            padding: 28px 24px;
-            border-right: 1px solid rgba(255,255,255,0.07);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-        }
-
-        /* book shape in detail */
-        .cg-detail-book {
-            position: relative;
-            perspective: 900px;
-            cursor: pointer;
-            width: fit-content;
-        }
-        .cg-detail-book img {
-            display: block;
-            width: 130px;
-            aspect-ratio: 2/3;
-            object-fit: cover;
-            border-radius: 2px 8px 8px 2px;
-            transform: rotateY(-8deg);
-            transform-origin: left center;
-            box-shadow: -6px 6px 22px rgba(0,0,0,0.6), -1px 0 3px rgba(0,0,0,0.4);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
-        .cg-detail-book:hover img {
-            transform: rotateY(-3deg);
-            box-shadow: -10px 10px 32px rgba(0,0,0,0.7);
-        }
-        .cg-detail-book::before {
-            content: '';
-            position: absolute;
-            top: 1%; left: -5px;
-            width: 5px; height: 98%;
-            background: linear-gradient(to right, #111, #333);
-            border-radius: 2px 0 0 2px;
-            transform: rotateY(-75deg) translateX(-2px);
-            transform-origin: right center;
-        }
-        .cg-detail-book::after {
-            content: '';
-            position: absolute;
-            top: 2px; right: -3px;
-            width: 4px; height: calc(100% - 4px);
-            background: repeating-linear-gradient(to bottom, #e8e0d0 0px, #e8e0d0 1px, #c8c0b0 1px, #c8c0b0 2px);
-            border-radius: 0 2px 2px 0;
-            opacity: 0.5;
-        }
-
-        .cg-detail-zoom {
-            font-size: 10px;
-            color: rgba(255,255,255,0.35);
-            letter-spacing: 0.05em;
-        }
-
-        /* flat (non-book) detail image — illustrated & webnovel */
-        .cg-detail-flat {
-            cursor: pointer;
-            width: fit-content;
-        }
-        .cg-detail-flat img {
-            display: block;
-            width: 130px;
-            aspect-ratio: 2/3;
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 8px 28px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .cg-detail-flat:hover img {
-            transform: scale(1.03);
-            box-shadow: 0 12px 36px rgba(0,0,0,0.65);
-        }
-
-        .cg-detail-right {
-            padding: 28px 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            position: relative;
-        }
-
-        .cg-close-btn {
-            position: absolute;
-            top: 14px; right: 14px;
-            width: 28px; height: 28px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.12);
-            background: rgba(255,255,255,0.05);
-            color: rgba(255,255,255,0.5);
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 14px; line-height: 1;
-            transition: background 0.2s, color 0.2s;
-        }
+        .cg-detail-inner { display: grid; grid-template-columns: 200px 1fr; }
+        .cg-detail-left { padding: 28px 24px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .cg-detail-book { position: relative; perspective: 900px; cursor: pointer; width: fit-content; }
+        .cg-detail-book img { display: block; width: 130px; aspect-ratio: 2/3; object-fit: cover; border-radius: 2px 8px 8px 2px; transform: rotateY(-8deg); transform-origin: left center; box-shadow: -6px 6px 22px rgba(0,0,0,0.6), -1px 0 3px rgba(0,0,0,0.4); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+        .cg-detail-book:hover img { transform: rotateY(-3deg); box-shadow: -10px 10px 32px rgba(0,0,0,0.7); }
+        .cg-detail-book::before { content: ''; position: absolute; top: 1%; left: -5px; width: 5px; height: 98%; background: linear-gradient(to right, #111, #333); border-radius: 2px 0 0 2px; transform: rotateY(-75deg) translateX(-2px); transform-origin: right center; }
+        .cg-detail-book::after { content: ''; position: absolute; top: 2px; right: -3px; width: 4px; height: calc(100% - 4px); background: repeating-linear-gradient(to bottom, #e8e0d0 0px, #e8e0d0 1px, #c8c0b0 1px, #c8c0b0 2px); border-radius: 0 2px 2px 0; opacity: 0.5; }
+        .cg-detail-flat { cursor: pointer; width: fit-content; }
+        .cg-detail-flat img { display: block; width: 130px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px; box-shadow: 0 8px 28px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .cg-detail-flat:hover img { transform: scale(1.03); box-shadow: 0 12px 36px rgba(0,0,0,0.65); }
+        .cg-detail-zoom { font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; }
+        .cg-detail-right { padding: 28px 28px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+        .cg-close-btn { position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; line-height: 1; transition: background 0.2s, color 0.2s; }
         .cg-close-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
-
-        .cg-detail-tag {
-            display: inline-block;
-            font-size: 10px; padding: 3px 11px;
-            border-radius: 20px;
-            background: rgba(255,107,53,0.15);
-            color: var(--primary-color, #ff6b35);
-            font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-            width: fit-content;
-        }
-
-        .cg-detail-title {
-            font-size: 20px; font-weight: 700;
-            color: #fff; letter-spacing: -0.01em;
-        }
-
-        .cg-detail-desc {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.7;
-        }
-
-        .cg-versions-label {
-            font-size: 10px; font-weight: 600;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            color: rgba(255,255,255,0.3);
-        }
-
+        .cg-detail-tag { display: inline-block; font-size: 10px; padding: 3px 11px; border-radius: 20px; background: rgba(255,107,53,0.15); color: var(--primary-color, #ff6b35); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; width: fit-content; }
+        .cg-detail-title { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+        .cg-detail-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+        .cg-versions-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
         .cg-versions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-        .cg-ver-thumb {
-            cursor: pointer;
-            border-radius: 3px 7px 7px 3px;
-            overflow: hidden;
-            position: relative;
-            border: 2px solid transparent;
-            transition: border-color 0.2s, transform 0.2s;
-            width: 54px;
-        }
+        .cg-ver-thumb { cursor: pointer; border-radius: 3px 7px 7px 3px; overflow: hidden; position: relative; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; width: 54px; }
         .cg-ver-thumb:hover { transform: translateY(-2px); }
         .cg-ver-thumb.cg-ver-active { border-color: var(--primary-color, #ff6b35); }
-        .cg-ver-thumb img {
-            width: 100%; aspect-ratio: 2/3;
-            object-fit: cover; display: block;
-        }
-        .cg-ver-thumb span {
-            display: block; font-size: 9px;
-            text-align: center; padding: 3px 0;
-            color: rgba(255,255,255,0.45);
-            background: rgba(0,0,0,0.45);
-        }
-
+        .cg-ver-thumb img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
+        .cg-ver-thumb span { display: block; font-size: 9px; text-align: center; padding: 3px 0; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.45); }
         .cg-detail-actions { display: flex; gap: 10px; margin-top: 4px; }
 
         @media (max-width: 768px) {
@@ -432,8 +210,66 @@
             .cg-detail-inner { grid-template-columns: 1fr; }
             .cg-detail-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); flex-direction: row; gap: 20px; padding: 20px; align-items: flex-start; }
         }
-        @media (max-width: 500px) {
-            .cg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        @media (max-width: 500px) { .cg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+        /* ══════════════════════════════════════════
+           GIG CARD COLOUR OVERRIDES — covers.html
+           illustrated=orange, fantasy=red, webnovel=purple
+        ══════════════════════════════════════════ */
+
+        /* Illustrated — orange (matches site brand) */
+        .gig-card[data-gig="illustrated"] .gig-tag     { background: rgba(255,107,53,0.15); color: #ff6b35; }
+        .gig-card[data-gig="illustrated"] .gig-svg     { color: #ff6b35; }
+        .gig-card[data-gig="illustrated"] .gig-features li::before { color: #ff6b35; }
+        .gig-card[data-gig="illustrated"] .btn-gig     {
+            background: linear-gradient(135deg, #e8501a, #ff6b35);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+        }
+        .gig-card[data-gig="illustrated"] .btn-gig:hover { box-shadow: 0 6px 20px rgba(255,107,53,0.6); }
+        .gig-card[data-gig="illustrated"]:hover { box-shadow: 0 10px 30px rgba(255,107,53,0.25); border-color: rgba(255,107,53,0.3); }
+        .gig-card[data-gig="illustrated"]::before { background: linear-gradient(90deg, #e8501a, #ff6b35); }
+
+        /* Fantasy — crimson/red, white button text */
+        .gig-card[data-gig="fantasy"] .gig-tag         { background: rgba(185,28,28,0.15); color: #f87171; }
+        .gig-card[data-gig="fantasy"] .gig-svg         { color: #f87171; }
+        .gig-card[data-gig="fantasy"] .gig-features li::before { color: #f87171; }
+        .gig-card[data-gig="fantasy"] .btn-gig         {
+            background: linear-gradient(135deg, #991b1b, #dc2626);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(185,28,28,0.4);
+        }
+        .gig-card[data-gig="fantasy"] .btn-gig:hover   { box-shadow: 0 6px 20px rgba(185,28,28,0.6); }
+        .gig-card[data-gig="fantasy"]:hover { box-shadow: 0 10px 30px rgba(185,28,28,0.25); border-color: rgba(185,28,28,0.3); }
+        .gig-card[data-gig="fantasy"]::before { background: linear-gradient(90deg, #991b1b, #dc2626); }
+
+        /* WebNovel — premium purple */
+        .gig-card[data-gig="webnovel"] .gig-tag        { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .gig-card[data-gig="webnovel"] .gig-svg        { color: #a855f7; }
+        .gig-card[data-gig="webnovel"] .gig-features li::before { color: #a855f7; }
+        .gig-card[data-gig="webnovel"] .btn-gig        {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(168,85,247,0.4);
+        }
+        .gig-card[data-gig="webnovel"] .btn-gig:hover  { box-shadow: 0 6px 20px rgba(168,85,247,0.6); }
+        .gig-card[data-gig="webnovel"]:hover { box-shadow: 0 10px 30px rgba(168,85,247,0.25); border-color: rgba(168,85,247,0.3); }
+        .gig-card[data-gig="webnovel"]::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+
+        /* WebNovel category section accent — purple */
+        .ctab-panel[data-panel="webnovel"] .category-heading { color: #a855f7; }
+        .ctab-panel[data-panel="webnovel"] .category-icon-wrap {
+            color: #a855f7;
+            background: rgba(168,85,247,0.1);
+            border-color: rgba(168,85,247,0.3);
+        }
+        .ctab-panel[data-panel="webnovel"] .btn-category-order {
+            color: #a855f7;
+            border-color: #a855f7;
+        }
+        .ctab-panel[data-panel="webnovel"] .btn-category-order:hover {
+            background: #a855f7;
+            color: #fff;
         }
     </style>
 </head>
@@ -462,7 +298,6 @@
         <div class="star"></div>
     </div>
 
-    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <h1 class="page-title fade-in">Book Cover Gallery</h1>
@@ -478,8 +313,9 @@
                 <p class="get-cover-intro">Love what you see? Let me craft the perfect cover for your story.</p>
             </div>
             <div class="gig-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <!-- Illustrated -->
-                <div class="gig-card glass-card scroll-reveal">
+
+                <!-- Illustrated — orange -->
+                <div class="gig-card glass-card scroll-reveal" data-gig="illustrated">
                     <div class="gig-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -494,11 +330,12 @@
                             <li>High-res print &amp; digital formats</li>
                             <li>Multiple revision rounds</li>
                         </ul>
-                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-primary btn-gig">Order on Fiverr →</a>
+                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
-                <!-- Fantasy -->
-                <div class="gig-card glass-card scroll-reveal">
+
+                <!-- Fantasy — red, white text -->
+                <div class="gig-card glass-card scroll-reveal" data-gig="fantasy">
                     <div class="gig-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
                             <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
@@ -513,11 +350,12 @@
                             <li>Rich atmospheric compositions</li>
                             <li>Multiple revision rounds</li>
                         </ul>
-                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-primary btn-gig">Order on Fiverr →</a>
+                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
-                <!-- WebNovel -->
-                <div class="gig-card glass-card scroll-reveal">
+
+                <!-- WebNovel — purple -->
+                <div class="gig-card glass-card scroll-reveal" data-gig="webnovel">
                     <div class="gig-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
@@ -535,9 +373,10 @@
                             <li>Genre-matching visual style</li>
                             <li>Fast turnaround</li>
                         </ul>
-                        <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-primary btn-gig">Order on Fiverr →</a>
+                        <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
+
             </div>
             <div class="scroll-hint scroll-reveal">
                 <span>Scroll down to see my portfolio</span>
@@ -557,9 +396,7 @@
         <div class="divider-line"></div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         TABBED GALLERY
-    ══════════════════════════════════════════ -->
+    <!-- TABBED GALLERY -->
     <div class="cover-tabs-bar" id="coverTabsBar">
         <div class="cover-tabs-inner" role="tablist">
             <button class="ctab ctab-active" data-tab="illustrated" role="tab" aria-selected="true">
@@ -580,20 +417,18 @@
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap">
+                        <div class="category-icon-wrap" style="color:#ff6b35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.3);">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading">Illustrated Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Illustrated Covers</h2>
                     </div>
-                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order">Get One Like This →</a>
+                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#ff6b35;border-color:#ff6b35;">Get One Like This →</a>
                 </div>
 
-                <!-- Inline detail panel — populated by JS -->
                 <div class="cg-detail" id="illustratedDetail"></div>
 
-                <!-- Cover grid -->
                 <div class="cg-grid" id="illustratedGrid">
                     <div class="cg-card" data-cover="ashCityOps" onclick="cgSelect('illustrated','ashCityOps',this)">
                         <div class="cg-thumb"><img src="" data-img="ashCityOps" alt="Ash City Ops"></div>
@@ -626,20 +461,18 @@
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap">
+                        <div class="category-icon-wrap" style="color:#f87171;background:rgba(248,113,113,0.1);border-color:rgba(248,113,113,0.3);">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
                                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading">Fantasy Styled Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Fantasy Styled Covers</h2>
                     </div>
-                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order">Get One Like This →</a>
+                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#f87171;border-color:#f87171;">Get One Like This →</a>
                 </div>
 
-                <!-- Inline detail panel -->
                 <div class="cg-detail" id="fantasyDetail"></div>
 
-                <!-- Cover grid — cg-fantasy adds book tilt -->
                 <div class="cg-grid" id="fantasyGrid">
                     <div class="cg-card cg-fantasy" data-cover="queenShadows1" onclick="cgSelect('fantasy','queenShadows1',this)">
                         <div class="cg-thumb">
@@ -664,17 +497,16 @@
 
     <!-- ══ PANEL: WEBNOVEL & EBOOK ══ -->
     <div class="ctab-panel" data-panel="webnovel" role="tabpanel">
-        <!-- HOW I MAKE WEBNOVEL & EBOOK COVERS -->
         <section class="covers-category-section" style="padding-bottom:0;">
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                        <div class="category-icon-wrap" style="color:#a855f7;background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
                                 <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading">How I Make WebNovel &amp; eBook Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">How I Make WebNovel &amp; eBook Covers</h2>
                     </div>
                 </div>
                 <div class="process-banner glass-card scroll-reveal" onclick="openLightbox(IMAGES.processbanner,'My Cover Design Process — Character Design → Environment &amp; Mood → Final Cover with Typography')">
@@ -689,21 +521,19 @@
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap">
+                        <div class="category-icon-wrap" style="color:#a855f7;background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading">WebNovel &amp; eBook Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">WebNovel &amp; eBook Covers</h2>
                     </div>
-                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-secondary btn-category-order">Get One Like This →</a>
+                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-secondary btn-category-order" style="color:#a855f7;border-color:#a855f7;">Get One Like This →</a>
                 </div>
 
-                <!-- Inline detail panel -->
                 <div class="cg-detail" id="webnovelDetail"></div>
 
-                <!-- Cover grid -->
                 <div class="cg-grid" id="webnovelGrid">
                     <div class="cg-card" data-cover="godsBlessing1" onclick="cgSelect('webnovel','godsBlessing1',this)">
                         <div class="cg-thumb"><img src="" data-img="godsBlessing1" alt="God's Blessing"></div>
@@ -739,9 +569,6 @@
             </div>
         </section>
     </div>
-    <!-- ══════════════════════════════════════════
-         END TABBED GALLERY
-    ══════════════════════════════════════════ -->
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -785,135 +612,87 @@
             if (e.key === 'Escape') closeLightbox();
         });
 
-        // ── Cover data — all info for detail panel ─────────────────
+        // ── Cover data ─────────────────────────────────────────────
         const COVERS = {
-            // Illustrated
             lastSun: {
-                tag: 'Illustrated Cover',
-                title: 'The Last Sun',
+                tag: 'Illustrated Cover', title: 'The Last Sun',
                 desc: 'A lone rider beneath a setting sun, the ghostly silhouette of a winged face looming over the horizon — epic, cinematic, unforgettable.',
                 fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [
-                    { key: 'lastSun', label: 'Version 1' }
-                ]
+                versions: [{ key: 'lastSun', label: 'Version 1' }]
             },
             nightwatcher: {
-                tag: 'Illustrated Cover',
-                title: 'The Nightwatcher',
+                tag: 'Illustrated Cover', title: 'The Nightwatcher',
                 desc: 'A cloaked guardian stands before a towering teal-lit structure — mysterious, atmospheric, and hauntingly beautiful.',
                 fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [
-                    { key: 'nightwatcher', label: 'Version 1' }
-                ]
+                versions: [{ key: 'nightwatcher', label: 'Version 1' }]
             },
             ashCityOps: {
-                tag: 'Illustrated Cover',
-                title: 'Ash City Ops',
+                tag: 'Illustrated Cover', title: 'Ash City Ops',
                 desc: 'A lone gunman walks through burning ruins beneath a colossal shadow — explosive orange and purple tones for a post-apocalyptic world on fire.',
                 fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [
-                    { key: 'ashCityOps', label: 'Version 1' }
-                ]
+                versions: [{ key: 'ashCityOps', label: 'Version 1' }]
             },
             callerBeasts: {
-                tag: 'Illustrated Cover',
-                title: 'Caller of the Beasts',
+                tag: 'Illustrated Cover', title: 'Caller of the Beasts',
                 desc: 'A summoner faces a colossal dragon against a blazing red sky — fireballs, ember-filled air, and raw epic fantasy energy.',
                 fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [
-                    { key: 'callerBeasts', label: 'Version 1' }
-                ]
+                versions: [{ key: 'callerBeasts', label: 'Version 1' }]
             },
-            // Fantasy
             queenShadows1: {
-                tag: 'Fantasy Cover',
-                title: 'Queen of Broken Shadows',
+                tag: 'Fantasy Cover', title: 'Queen of Broken Shadows',
                 desc: 'A jewelled crown draped in moonlit smoke, blue butterflies scattered across a deep midnight backdrop — dark romance, regal and mysterious.',
                 fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [
-                    { key: 'queenShadows1', label: 'Version 1', placeholder: 'https://placehold.co/300x450/0d0d1a/c9a84c?text=V1' }
-                ]
+                versions: [{ key: 'queenShadows1', label: 'Version 1', placeholder: 'https://placehold.co/300x450/0d0d1a/c9a84c?text=V1' }]
             },
             poisonedIce1: {
-                tag: 'Dark Romance Cover',
-                title: 'Poisoned Ice Obsession',
+                tag: 'Dark Romance Cover', title: 'Poisoned Ice Obsession',
                 desc: 'A dark romance wrapped in frost and danger — icy tones and brooding atmosphere for a story where obsession cuts as cold as poison.',
                 fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [
-                    { key: 'poisonedIce1', label: 'Version 1', placeholder: 'https://placehold.co/300x450/0a1020/c9a84c?text=V1' }
-                ]
+                versions: [{ key: 'poisonedIce1', label: 'Version 1', placeholder: 'https://placehold.co/300x450/0a1020/c9a84c?text=V1' }]
             },
-            // WebNovel
             redVoid1: {
-                tag: 'WebNovel Cover',
-                title: 'Red Void Ascension',
-                desc: 'A silver-haired warrior stepping through a blood-red void, demons of crimson chaos swirling around her. Each version explores a different angle: dramatic close-up intensity vs full-body epic scale.',
+                tag: 'WebNovel Cover', title: 'Red Void Ascension',
+                desc: 'A silver-haired warrior stepping through a blood-red void, demons of crimson chaos swirling around her. Each version explores a different angle.',
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [
-                    { key: 'redVoid1', label: 'Version 1' },
-                    { key: 'redVoid2', label: 'Version 2' }
-                ]
+                versions: [{ key: 'redVoid1', label: 'Version 1' }, { key: 'redVoid2', label: 'Version 2' }]
             },
             vxv1: {
-                tag: 'WebNovel Cover',
-                title: 'Villainess x Villain',
-                desc: '"They are obsessed with each other." Three cover versions — from thorned rose elegance to glowing dark magic, each telling the same story of obsession in a different light.',
+                tag: 'WebNovel Cover', title: 'Villainess x Villain',
+                desc: '"They are obsessed with each other." Three cover versions — from thorned rose elegance to glowing dark magic.',
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [
-                    { key: 'vxv1', label: 'Version 1' },
-                    { key: 'vxv2', label: 'Version 2' },
-                    { key: 'vxv3', label: 'Version 3' }
-                ]
+                versions: [{ key: 'vxv1', label: 'Version 1' }, { key: 'vxv2', label: 'Version 2' }, { key: 'vxv3', label: 'Version 3' }]
             },
             endWorld1: {
-                tag: 'WebNovel Cover · LitRPG',
-                title: 'End World Tutorial',
-                desc: 'A level-1 adventurer stands against an apocalyptic beast tearing through the sky — quest pop-ups, HP/MP bars, and raw chaos. Three versions explore different colour palettes and moods for this LitRPG epic.',
+                tag: 'WebNovel Cover · LitRPG', title: 'End World Tutorial',
+                desc: 'A level-1 adventurer stands against an apocalyptic beast — quest pop-ups, HP/MP bars, and raw chaos. Three colour palettes.',
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [
-                    { key: 'endWorld1', label: 'Version 1' },
-                    { key: 'endWorld2', label: 'Version 2' },
-                    { key: 'endWorld3', label: 'Version 3' }
-                ]
+                versions: [{ key: 'endWorld1', label: 'Version 1' }, { key: 'endWorld2', label: 'Version 2' }, { key: 'endWorld3', label: 'Version 3' }]
             },
             daoReincarnation1: {
-                tag: 'WebNovel Cover · Cultivation',
-                title: 'The Dao of Reincarnation',
-                desc: 'A lone cultivator strides forward through swirling ink and past lives — black-and-white Chinese ink painting aesthetic with gold title treatment. Three versions from solitary ascension to the full cycle of a hundred lives.',
+                tag: 'WebNovel Cover · Cultivation', title: 'The Dao of Reincarnation',
+                desc: 'A lone cultivator strides through swirling ink and past lives — black-and-white Chinese ink painting with gold title treatment.',
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [
-                    { key: 'daoReincarnation1', label: 'Version 1' },
-                    { key: 'daoReincarnation2', label: 'Version 2' },
-                    { key: 'daoReincarnation3', label: 'Version 3' }
-                ]
+                versions: [{ key: 'daoReincarnation1', label: 'Version 1' }, { key: 'daoReincarnation2', label: 'Version 2' }, { key: 'daoReincarnation3', label: 'Version 3' }]
             },
             cultivatingSeclusion1: {
-                tag: 'WebNovel Cover · Cultivation',
-                title: "I've Been Cultivating in Seclusion",
-                desc: 'A serene cultivator meditates atop a mountain cliff, cherry blossoms drifting, two chickens keeping vigil — a warm, vibrant xianxia cover that perfectly balances the slice-of-life and cultivation fantasy.',
+                tag: 'WebNovel Cover · Cultivation', title: "I've Been Cultivating in Seclusion",
+                desc: 'A serene cultivator meditates atop a mountain cliff, cherry blossoms drifting, two chickens keeping vigil.',
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [
-                    { key: 'cultivatingSeclusion1', label: 'Version 1' }
-                ]
+                versions: [{ key: 'cultivatingSeclusion1', label: 'Version 1' }]
             },
             godsBlessing1: {
-                tag: 'WebNovel Cover · LitRPG',
-                title: "God's Blessing: Every Stream Donation I Get 10X Stats",
-                desc: 'A charismatic streamer wields godlike power as divine gifts flood in live — stream UI overlays, SP donations from Agni and Anubis, level-ups and quests all firing at once. Three versions explore blue ice, snowy dark, and fiery warm palettes.',
+                tag: 'WebNovel Cover · LitRPG', title: "God's Blessing: Every Stream Donation I Get 10X Stats",
+                desc: 'A charismatic streamer wields godlike power — stream UI overlays, SP donations from Agni and Anubis, level-ups all firing at once.',
                 fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [
-                    { key: 'godsBlessing1', label: 'Version 1' },
-                    { key: 'godsBlessing2', label: 'Version 2' },
-                    { key: 'godsBlessing3', label: 'Version 3' }
-                ]
+                versions: [{ key: 'godsBlessing1', label: 'Version 1' }, { key: 'godsBlessing2', label: 'Version 2' }, { key: 'godsBlessing3', label: 'Version 3' }]
             }
         };
 
         // ── State ─────────────────────────────────────────────────
-        // active cover key per panel
         const cgActive = { illustrated: null, fantasy: null, webnovel: null };
 
         // ── Render detail panel ───────────────────────────────────
+        // FIX: removed scrollIntoView — panel opens in-place, no scroll jump
         function cgRenderDetail(panelId, coverKey) {
             const c = COVERS[coverKey];
             const detailEl = document.getElementById(panelId + 'Detail');
@@ -957,8 +736,7 @@
                 </div>`;
 
             detailEl.classList.add('cg-detail-open');
-            // scroll detail into view smoothly
-            detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // ✅ NO scrollIntoView — detail opens exactly where you are
         }
 
         // ── Switch version inside detail ──────────────────────────
@@ -967,35 +745,20 @@
             const ver = c.versions.find(v => v.key === imgKey);
             const src = (window.IMAGES && IMAGES[imgKey]) || ver?.placeholder || '';
             const mainImg = document.getElementById(panelId + 'MainImg');
-
             mainImg.style.opacity = '0';
             mainImg.style.transition = 'opacity 0.2s ease';
-            setTimeout(() => {
-                mainImg.src = src;
-                mainImg.style.opacity = '1';
-            }, 200);
-
-            thumbEl.closest('.cg-versions')
-                .querySelectorAll('.cg-ver-thumb')
-                .forEach(t => t.classList.remove('cg-ver-active'));
+            setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 200);
+            thumbEl.closest('.cg-versions').querySelectorAll('.cg-ver-thumb').forEach(t => t.classList.remove('cg-ver-active'));
             thumbEl.classList.add('cg-ver-active');
         }
 
         // ── Select a cover card ───────────────────────────────────
         function cgSelect(panelId, coverKey, cardEl) {
             const grid = document.getElementById(panelId + 'Grid');
-
-            // toggle off if same card clicked again
-            if (cgActive[panelId] === coverKey) {
-                cgClose(panelId);
-                return;
-            }
-
-            // mark active card
+            if (cgActive[panelId] === coverKey) { cgClose(panelId); return; }
             cgActive[panelId] = coverKey;
             grid.querySelectorAll('.cg-card').forEach(c => c.classList.remove('cg-active'));
             cardEl.classList.add('cg-active');
-
             cgRenderDetail(panelId, coverKey);
         }
 
@@ -1005,11 +768,10 @@
             const detailEl = document.getElementById(panelId + 'Detail');
             detailEl.classList.remove('cg-detail-open');
             detailEl.innerHTML = '';
-            const grid = document.getElementById(panelId + 'Grid');
-            grid.querySelectorAll('.cg-card').forEach(c => c.classList.remove('cg-active'));
+            document.getElementById(panelId + 'Grid').querySelectorAll('.cg-card').forEach(c => c.classList.remove('cg-active'));
         }
 
-        // ── Cover tile parallax on mouse move ─────────────────────
+        // ── Cover tile parallax ───────────────────────────────────
         document.querySelectorAll('.cg-grid').forEach(grid => {
             grid.addEventListener('mousemove', e => {
                 grid.querySelectorAll('.cg-card').forEach(card => {
@@ -1018,7 +780,6 @@
                     const cy = rect.top + rect.height / 2;
                     const dx = (e.clientX - cx) / rect.width;
                     const dy = (e.clientY - cy) / rect.height;
-                    // tilt toward cursor, clamp to ±8deg
                     const rotX = (-dy * 8).toFixed(2);
                     const rotY = (dx * 8).toFixed(2);
                     card.style.transform = `perspective(700px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
@@ -1026,7 +787,6 @@
                     card.style.animationPlayState = 'paused';
                 });
             });
-
             grid.addEventListener('mouseleave', () => {
                 grid.querySelectorAll('.cg-card').forEach(card => {
                     card.style.transform = '';
@@ -1043,24 +803,16 @@
         ctabs.forEach(btn => {
             btn.addEventListener('click', () => {
                 const target = btn.dataset.tab;
-
-                ctabs.forEach(t => {
-                    t.classList.remove('ctab-active');
-                    t.setAttribute('aria-selected', 'false');
-                });
+                ctabs.forEach(t => { t.classList.remove('ctab-active'); t.setAttribute('aria-selected', 'false'); });
                 btn.classList.add('ctab-active');
                 btn.setAttribute('aria-selected', 'true');
-
                 cpanels.forEach(p => p.classList.remove('ctab-panel-active'));
                 const panel = document.querySelector(`.ctab-panel[data-panel="${target}"]`);
                 panel.classList.add('ctab-panel-active');
-
                 panel.querySelectorAll('.scroll-reveal').forEach(el => {
                     el.classList.remove('active', 'revealed');
                     setTimeout(() => el.classList.add('active', 'revealed'), 80);
                 });
-
-                // re-attach parallax to newly visible grids
                 panel.querySelectorAll('.cg-grid').forEach(grid => {
                     grid.addEventListener('mousemove', e => {
                         grid.querySelectorAll('.cg-card').forEach(card => {
@@ -1084,7 +836,6 @@
                         });
                     });
                 });
-
                 if (window.applyImages) window.applyImages();
             });
         });
