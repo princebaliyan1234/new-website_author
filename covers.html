@@ -29,23 +29,30 @@
         }
         .gig-card[data-gig="handdrawn"]::before { background: linear-gradient(90deg, #20b2aa, #48d1cc); }
 
-        /* Illustrated — unique: rich violet/purple */
-        .gig-card[data-gig="illustrated"] .gig-tag     { background: rgba(147,51,234,0.15); color: #a855f7; }
-        .gig-card[data-gig="illustrated"] .gig-svg     { color: #a855f7; }
-        .gig-card[data-gig="illustrated"] .gig-features li::before { color: #a855f7; }
-        .gig-card[data-gig="illustrated"] .btn-gig     {
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            box-shadow: 0 4px 15px rgba(147,51,234,0.4);
-            color: #ffffff;
-        }
-        .gig-card[data-gig="illustrated"] .btn-gig:hover {
-            box-shadow: 0 6px 20px rgba(147,51,234,0.6);
-        }
-        .gig-card[data-gig="illustrated"]:hover {
-            box-shadow: 0 10px 30px rgba(147,51,234,0.25);
-            border-color: rgba(147,51,234,0.3);
-        }
-        .gig-card[data-gig="illustrated"]::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+        
+      /* Illustrated — orange */
+.gig-card[data-gig="illustrated"] .gig-tag     { background: rgba(255,107,53,0.15); color: #ff6b35; }
+.gig-card[data-gig="illustrated"] .gig-svg     { color: #ff6b35; }
+.gig-card[data-gig="illustrated"] .gig-features li::before { color: #ff6b35; }
+
+.gig-card[data-gig="illustrated"] .btn-gig     {
+    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+    color: #ffffff;
+}
+
+.gig-card[data-gig="illustrated"] .btn-gig:hover {
+    box-shadow: 0 6px 20px rgba(255,107,53,0.6);
+}
+
+.gig-card[data-gig="illustrated"]:hover {
+    box-shadow: 0 10px 30px rgba(255,107,53,0.25);
+    border-color: rgba(255,107,53,0.3);
+}
+
+.gig-card[data-gig="illustrated"]::before {
+    background: linear-gradient(90deg, #ff6b35, #ff8c42);
+}
 
         /* Fantasy — deep/dark: crimson/deep red */
         .gig-card[data-gig="fantasy"] .gig-tag         { background: rgba(185,28,28,0.15); color: #f87171; }
