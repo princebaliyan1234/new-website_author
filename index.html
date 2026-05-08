@@ -3,278 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Covers - Silence of Scribes</title>
-    <link rel="icon" type="image/png" href="images/sos-site-logo1.png">
+    <title>Silence of Scribes - Author & Cover Designer</title>
+  <link rel="icon" type="image/png" href="images/sos-site-logo1.png">
     <link rel="stylesheet" href="./style.css">
-    <style>
-        /* ══════════════════════════════════════════
-           GIG CARD COLOUR THEMES
-        ══════════════════════════════════════════ */
-
-        /* Hand-drawn — trust: calm teal/cyan */
-        .gig-card[data-gig="handdrawn"] .gig-tag       { background: rgba(32,178,170,0.15); color: #20b2aa; }
-        .gig-card[data-gig="handdrawn"] .gig-svg       { color: #20b2aa; }
-        .gig-card[data-gig="handdrawn"] .gig-features li::before { color: #20b2aa; }
-        .gig-card[data-gig="handdrawn"] .btn-gig       {
-            background: linear-gradient(135deg, #20b2aa, #48d1cc);
-            box-shadow: 0 4px 15px rgba(32,178,170,0.4);
-        }
-        .gig-card[data-gig="handdrawn"] .btn-gig:hover {
-            box-shadow: 0 6px 20px rgba(32,178,170,0.6);
-        }
-        .gig-card[data-gig="handdrawn"]:hover {
-            box-shadow: 0 10px 30px rgba(32,178,170,0.25);
-            border-color: rgba(32,178,170,0.3);
-        }
-        .gig-card[data-gig="handdrawn"]::before { background: linear-gradient(90deg, #20b2aa, #48d1cc); }
-
-        /* Illustrated — unique: rich violet/purple */
-        .gig-card[data-gig="illustrated"] .gig-tag     { background: rgba(147,51,234,0.15); color: #a855f7; }
-        .gig-card[data-gig="illustrated"] .gig-svg     { color: #a855f7; }
-        .gig-card[data-gig="illustrated"] .gig-features li::before { color: #a855f7; }
-        .gig-card[data-gig="illustrated"] .btn-gig     {
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            box-shadow: 0 4px 15px rgba(147,51,234,0.4);
-        }
-        .gig-card[data-gig="illustrated"] .btn-gig:hover {
-            box-shadow: 0 6px 20px rgba(147,51,234,0.6);
-        }
-        .gig-card[data-gig="illustrated"]:hover {
-            box-shadow: 0 10px 30px rgba(147,51,234,0.25);
-            border-color: rgba(147,51,234,0.3);
-        }
-        .gig-card[data-gig="illustrated"]::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
-
-        /* Fantasy — deep/dark: crimson/deep red */
-        .gig-card[data-gig="fantasy"] .gig-tag         { background: rgba(185,28,28,0.15); color: #f87171; }
-        .gig-card[data-gig="fantasy"] .gig-svg         { color: #f87171; }
-        .gig-card[data-gig="fantasy"] .gig-features li::before { color: #f87171; }
-        .gig-card[data-gig="fantasy"] .btn-gig         {
-            background: linear-gradient(135deg, #991b1b, #dc2626);
-            box-shadow: 0 4px 15px rgba(185,28,28,0.4);
-        }
-        .gig-card[data-gig="fantasy"] .btn-gig:hover   {
-            box-shadow: 0 6px 20px rgba(185,28,28,0.6);
-        }
-        .gig-card[data-gig="fantasy"]:hover {
-            box-shadow: 0 10px 30px rgba(185,28,28,0.25);
-            border-color: rgba(185,28,28,0.3);
-        }
-        .gig-card[data-gig="fantasy"]::before { background: linear-gradient(90deg, #991b1b, #dc2626); }
-
-        /* WebNovel — premium: gold */
-        .gig-card[data-gig="webnovel"] .gig-tag        { background: rgba(212,175,55,0.15); color: #d4af37; }
-        .gig-card[data-gig="webnovel"] .gig-svg        { color: #d4af37; }
-        .gig-card[data-gig="webnovel"] .gig-features li::before { color: #d4af37; }
-        .gig-card[data-gig="webnovel"] .btn-gig        {
-            background: linear-gradient(135deg, #b8960c, #d4af37);
-            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
-        }
-        .gig-card[data-gig="webnovel"] .btn-gig:hover  {
-            box-shadow: 0 6px 20px rgba(212,175,55,0.6);
-        }
-        .gig-card[data-gig="webnovel"]:hover {
-            box-shadow: 0 10px 30px rgba(212,175,55,0.25);
-            border-color: rgba(212,175,55,0.3);
-        }
-        .gig-card[data-gig="webnovel"]::before { background: linear-gradient(90deg, #b8960c, #d4af37); }
-
-        /* ── Tab colour overrides per category ── */
-        /* Hand-drawn tab */
-        .ctab[data-tab="handdrawn"].ctab-active        { color: #20b2aa; }
-        .ctab[data-tab="handdrawn"].ctab-active::after { background: #20b2aa; transform: translateX(-50%) scaleX(1); }
-        /* Illustrated tab */
-        .ctab[data-tab="illustrated"].ctab-active        { color: #a855f7; }
-        .ctab[data-tab="illustrated"].ctab-active::after { background: #a855f7; transform: translateX(-50%) scaleX(1); }
-        /* Fantasy tab */
-        .ctab[data-tab="fantasy"].ctab-active        { color: #f87171; }
-        .ctab[data-tab="fantasy"].ctab-active::after { background: #dc2626; transform: translateX(-50%) scaleX(1); }
-        /* WebNovel tab */
-        .ctab[data-tab="webnovel"].ctab-active        { color: #d4af37; }
-        .ctab[data-tab="webnovel"].ctab-active::after { background: #d4af37; transform: translateX(-50%) scaleX(1); }
-
-        /* ══════════════════════════════════════════
-           TAB GALLERY — scoped styles (unchanged)
-        ══════════════════════════════════════════ */
-        .cover-tabs-bar {
-            position: sticky;
-            top: 72px;
-            z-index: 200;
-            background: rgba(10,10,10,0.92);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-        .cover-tabs-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5rem;
-            display: flex;
-            gap: 0;
-            justify-content: center;
-        }
-        .ctab {
-            position: relative;
-            height: 54px;
-            padding: 0 28px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.25s;
-            white-space: nowrap;
-        }
-        .ctab::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 70%;
-            height: 2px;
-            background: var(--primary-color);
-            transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
-        }
-        .ctab-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: currentColor;
-            opacity: 0.4;
-            transition: opacity 0.25s, transform 0.25s;
-            flex-shrink: 0;
-        }
-        .ctab.ctab-active .ctab-dot { opacity: 1; transform: scale(1.4); }
-        .ctab-panel { display: none; }
-        .ctab-panel.ctab-panel-active {
-            display: block;
-            animation: ctabFadeIn 0.38s ease forwards;
-        }
-        @keyframes ctabFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 600px) {
-            .cover-tabs-inner { padding: 0 1rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .ctab { padding: 0 14px; font-size: 0.68rem; }
-        }
-
-        /* ── Cover tile animations ── */
-        @keyframes cgFloat {
-            0%, 100% { transform: translateY(0px); }
-            50%       { transform: translateY(-6px); }
-        }
-        .cg-card { animation: cgFloat 4s ease-in-out infinite; }
-        .cg-card:nth-child(1) { animation-delay: 0s; }
-        .cg-card:nth-child(2) { animation-delay: 0.6s; }
-        .cg-card:nth-child(3) { animation-delay: 1.2s; }
-        .cg-card:nth-child(4) { animation-delay: 1.8s; }
-        .cg-card:nth-child(5) { animation-delay: 0.3s; }
-        .cg-card:nth-child(6) { animation-delay: 0.9s; }
-        .cg-card:nth-child(7) { animation-delay: 1.5s; }
-        .cg-card:nth-child(8) { animation-delay: 2.1s; }
-        .cg-card:hover { animation-play-state: paused; }
-        .cg-thumb::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -75%;
-            width: 50%; height: 100%;
-            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.13) 50%, transparent 100%);
-            transform: skewX(-15deg);
-            transition: none;
-            pointer-events: none;
-            z-index: 3;
-        }
-        .cg-card:hover .cg-thumb::after { left: 130%; transition: left 0.55s ease; }
-        .cg-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-            margin-top: 1.5rem;
-        }
-        .cg-card { cursor: pointer; transition: transform 0.18s ease; }
-        .cg-card:hover { transform: translateY(-5px); }
-        .cg-card.cg-active .cg-thumb { outline: 2px solid var(--primary-color); outline-offset: 3px; }
-        .cg-thumb {
-            width: 100%; aspect-ratio: 2/3;
-            border-radius: 6px; overflow: hidden;
-            position: relative; background: rgba(255,255,255,0.04);
-        }
-        .cg-fantasy .cg-thumb { border-radius: 3px 8px 8px 3px; }
-        .cg-fantasy .cg-thumb::before {
-            content: ''; position: absolute;
-            left: 0; top: 0; bottom: 0; width: 10px;
-            background: rgba(0,0,0,0.28);
-            border-right: 1px solid rgba(255,255,255,0.07);
-            z-index: 2;
-        }
-        .cg-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
-        .cg-card:hover .cg-thumb img { transform: scale(1.04); }
-        .cg-name { font-size: 12px; font-weight: 600; color: var(--text-primary, #fff); margin-top: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .cg-sub  { font-size: 11px; color: var(--text-secondary, rgba(255,255,255,0.45)); margin-top: 2px; }
-        .cg-fantasy .cg-thumb {
-            transform: perspective(600px) rotateY(-4deg);
-            transform-origin: left center;
-            box-shadow: -5px 5px 16px rgba(0,0,0,0.5);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .cg-fantasy:hover .cg-thumb { transform: perspective(600px) rotateY(-1deg) translateY(-5px); box-shadow: -8px 8px 22px rgba(0,0,0,0.6); }
-        .cg-fantasy:hover { transform: none; }
-        .cg-detail { display: none; margin-top: 1.5rem; margin-bottom: 0.5rem; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); overflow: hidden; animation: cgDetailIn 0.32s ease forwards; }
-        .cg-detail.cg-detail-open { display: block; }
-        @keyframes cgDetailIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-        .cg-detail-inner { display: grid; grid-template-columns: 200px 1fr; }
-        .cg-detail-left { padding: 28px 24px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; align-items: center; gap: 14px; }
-        .cg-detail-book { position: relative; perspective: 900px; cursor: pointer; width: fit-content; }
-        .cg-detail-book img { display: block; width: 130px; aspect-ratio: 2/3; object-fit: cover; border-radius: 2px 8px 8px 2px; transform: rotateY(-8deg); transform-origin: left center; box-shadow: -6px 6px 22px rgba(0,0,0,0.6), -1px 0 3px rgba(0,0,0,0.4); transition: transform 0.35s ease, box-shadow 0.35s ease; }
-        .cg-detail-book:hover img { transform: rotateY(-3deg); box-shadow: -10px 10px 32px rgba(0,0,0,0.7); }
-        .cg-detail-book::before { content: ''; position: absolute; top: 1%; left: -5px; width: 5px; height: 98%; background: linear-gradient(to right, #111, #333); border-radius: 2px 0 0 2px; transform: rotateY(-75deg) translateX(-2px); transform-origin: right center; }
-        .cg-detail-book::after { content: ''; position: absolute; top: 2px; right: -3px; width: 4px; height: calc(100% - 4px); background: repeating-linear-gradient(to bottom, #e8e0d0 0px, #e8e0d0 1px, #c8c0b0 1px, #c8c0b0 2px); border-radius: 0 2px 2px 0; opacity: 0.5; }
-        .cg-detail-flat { cursor: pointer; width: fit-content; }
-        .cg-detail-flat img { display: block; width: 130px; aspect-ratio: 2/3; object-fit: cover; border-radius: 6px; box-shadow: 0 8px 28px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .cg-detail-flat:hover img { transform: scale(1.03); box-shadow: 0 12px 36px rgba(0,0,0,0.65); }
-        .cg-detail-zoom { font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; }
-        .cg-detail-right { padding: 28px 28px; display: flex; flex-direction: column; gap: 14px; position: relative; }
-        .cg-close-btn { position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; line-height: 1; transition: background 0.2s, color 0.2s; }
-        .cg-close-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
-        .cg-detail-tag { display: inline-block; font-size: 10px; padding: 3px 11px; border-radius: 20px; background: rgba(255,107,53,0.15); color: var(--primary-color, #ff6b35); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; width: fit-content; }
-        .cg-detail-title { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
-        .cg-detail-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
-        .cg-versions-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-        .cg-versions { display: flex; gap: 10px; flex-wrap: wrap; }
-        .cg-ver-thumb { cursor: pointer; border-radius: 3px 7px 7px 3px; overflow: hidden; position: relative; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; width: 54px; }
-        .cg-ver-thumb:hover { transform: translateY(-2px); }
-        .cg-ver-thumb.cg-ver-active { border-color: var(--primary-color, #ff6b35); }
-        .cg-ver-thumb img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
-        .cg-ver-thumb span { display: block; font-size: 9px; text-align: center; padding: 3px 0; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.45); }
-        .cg-detail-actions { display: flex; gap: 10px; margin-top: 4px; }
-        @media (max-width: 768px) {
-            .cg-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-            .cg-detail-inner { grid-template-columns: 1fr; }
-            .cg-detail-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); flex-direction: row; gap: 20px; padding: 20px; align-items: flex-start; }
-        }
-        @media (max-width: 500px) { .cg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    </style>
 </head>
-<body>
+<body class="loading">
+    <div id="loader">
+        <div class="loader-orb loader-orb-1"></div>
+        <div class="loader-orb loader-orb-2"></div>
+        <div class="loader-quill">
+            <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="quill-path"
+                    d="M50 10 C70 15, 90 35, 85 60 C80 80, 65 90, 50 110 C35 90, 20 80, 15 60 C10 35, 30 15, 50 10 Z"
+                    stroke="#ff6b35" stroke-width="2" fill="rgba(255,107,53,0.08)"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="quill-path"
+                    d="M50 110 L45 118 M50 110 L55 118"
+                    stroke="#ff8c50" stroke-width="1.5" stroke-linecap="round"/>
+                <path class="quill-path"
+                    d="M50 20 L50 100 M50 40 C42 50, 25 52, 20 58 M50 40 C58 50, 75 52, 80 58 M50 60 C43 68, 28 70, 22 74 M50 60 C57 68, 72 70, 78 74"
+                    stroke="rgba(255,107,53,0.4)" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="loader-text">
+            <div class="loader-title">Silence of Scribes</div>
+            <div class="loader-subtitle">Author &amp; Cover Designer</div>
+        </div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar"></div>
+        </div>
+        <div class="loader-tagline">crafting worlds, one word at a time</div>
+    </div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="" data-img="logo" alt="Silence of Scribes" class="nav-logo-img">
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html" class="nav-link active">Portfolio</a></li>
                 <li><a href="books.html" class="nav-link">Books</a></li>
-                <li><a href="covers.html" class="nav-link active">Covers</a></li>
+                <li><a href="covers.html" class="nav-link">Covers</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
@@ -286,619 +61,81 @@
         <div class="star"></div>
     </div>
 
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title fade-in">Book Cover Gallery</h1>
-            <p class="page-subtitle fade-in-delay-1">Visual stories crafted with passion</p>
-        </div>
-    </section>
-
-    <!-- ① GET YOUR COVER -->
-    <section class="get-cover-section">
-        <div class="container">
-            <div class="get-cover-header scroll-reveal">
-                <h2 class="section-title">Get Your Cover Designed</h2>
-                <p class="get-cover-intro">Love what you see? Let me craft the perfect cover for your story.</p>
+    <section class="hero" id="hero">
+        <div class="hero-content container">
+            <div class="hero-text">
+                <h1 class="hero-title fade-in">
+                    Hi <span class="wave-hand">👋</span>, I'm <span class="brand-name">Silence of Scribes</span>
+                    <span class="rotating-star">✨</span>
+                </h1>
+                <p class="hero-subtitle fade-in-delay-1">Author & Book Cover Designer</p>
+                <p class="hero-description fade-in-delay-2">
+                    Crafting stories that captivate minds and designs that capture hearts.
+                    I bring imagination to life through words and visual artistry.
+                </p>
+                <div class="hero-buttons fade-in-delay-3">
+                    <a href="books.html" class="btn btn-primary">View My Books</a>
+                    <a href="covers.html" class="btn btn-secondary">Browse Covers</a>
+                </div>
             </div>
-            <div class="gig-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-
-                <!-- Hand-drawn — teal/trust -->
-                <div class="gig-card glass-card scroll-reveal" data-gig="handdrawn">
-                    <div class="gig-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
-                            <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
-                        </svg>
-                    </div>
-                    <div class="gig-content">
-                        <span class="gig-tag">Hand-drawn</span>
-                        <h3>Hand-drawn Cover Art</h3>
-                        <p>Authentic hand-crafted illustrations with a personal touch — warm, expressive, and uniquely yours. Perfect for stories that need heart and soul on their cover.</p>
-                        <ul class="gig-features">
-                            <li>Original hand-drawn artistry</li>
-                            <li>Warm, character-driven compositions</li>
-                            <li>Multiple revision rounds</li>
-                        </ul>
-                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
-                    </div>
-                </div>
-
-                <!-- Illustrated — violet/unique -->
-                <div class="gig-card glass-card scroll-reveal" data-gig="illustrated">
-                    <div class="gig-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <div class="gig-content">
-                        <span class="gig-tag">Illustrated</span>
-                        <h3>Illustrated Book Covers</h3>
-                        <p>Stunning hand-crafted illustrated covers with rich detail, vivid characters, and epic scenes — perfect for fantasy, sci-fi, and beyond.</p>
-                        <ul class="gig-features">
-                            <li>Custom character &amp; scene illustration</li>
-                            <li>High-res print &amp; digital formats</li>
-                            <li>Multiple revision rounds</li>
-                        </ul>
-                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
-                    </div>
-                </div>
-
-                <!-- Fantasy — deep red/dark -->
-                <div class="gig-card glass-card scroll-reveal" data-gig="fantasy">
-                    <div class="gig-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
-                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
-                    </div>
-                    <div class="gig-content">
-                        <span class="gig-tag">Fantasy</span>
-                        <h3>Fantasy Styled Covers</h3>
-                        <p>Dark romance, mythology, and magic — ornate, atmospheric covers for fantasy novels that draw readers in before they read a single word.</p>
-                        <ul class="gig-features">
-                            <li>Dark fantasy &amp; romance aesthetics</li>
-                            <li>Rich atmospheric compositions</li>
-                            <li>Multiple revision rounds</li>
-                        </ul>
-                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
-                    </div>
-                </div>
-
-                <!-- WebNovel — gold/premium -->
-                <div class="gig-card glass-card scroll-reveal" data-gig="webnovel">
-                    <div class="gig-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                            <line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/>
-                        </svg>
-                    </div>
-                    <div class="gig-content">
-                        <span class="gig-tag">WebNovel</span>
-                        <h3>WebNovel &amp; eBook Covers</h3>
-                        <p>Eye-catching covers tailored specifically for WebNovel platform dimensions and aesthetics — designed to stand out and attract readers.</p>
-                        <ul class="gig-features">
-                            <li>WebNovel-optimised dimensions</li>
-                            <li>Genre-matching visual style</li>
-                            <li>Fast turnaround</li>
-                        </ul>
-                        <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="scroll-hint scroll-reveal">
-                <span>Scroll down to see my portfolio</span>
-                <div class="scroll-arrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-                        <line x1="12" y1="5" x2="12" y2="19"/>
-                        <polyline points="19 12 12 19 5 12"/>
-                    </svg>
+            <div class="hero-image-container">
+                <div class="profile-glow"></div>
+                <div class="profile-image-wrapper">
+                    <img src="" data-img="authorAvatar" alt="Silence of Scribes" class="profile-image parallax-image">
+                    <div class="floating-pointer pointer-1">Author</div>
+                    <div class="floating-pointer pointer-2">Cover Designer</div>
+                    <div class="floating-pointer pointer-3">Storyteller</div>
+                    <div class="floating-pointer pointer-4">Creative Mind</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <div class="divider-line"></div>
-        <span class="divider-label">My Portfolio</span>
-        <div class="divider-line"></div>
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         TABBED GALLERY
-    ══════════════════════════════════════════ -->
-    <div class="cover-tabs-bar" id="coverTabsBar">
-        <div class="cover-tabs-inner" role="tablist">
-            <button class="ctab" data-tab="handdrawn" role="tab" aria-selected="false">
-                <span class="ctab-dot"></span>Hand-drawn
-            </button>
-            <button class="ctab ctab-active" data-tab="illustrated" role="tab" aria-selected="true">
-                <span class="ctab-dot"></span>Illustrated
-            </button>
-            <button class="ctab" data-tab="fantasy" role="tab" aria-selected="false">
-                <span class="ctab-dot"></span>Fantasy
-            </button>
-            <button class="ctab" data-tab="webnovel" role="tab" aria-selected="false">
-                <span class="ctab-dot"></span>WebNovel &amp; eBook
-            </button>
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">About Me</h2>
+            <div class="about-grid">
+                <div class="glass-card scroll-reveal">
+                    <div class="card-icon">📚</div>
+                    <h3>Published Author</h3>
+                    <p>Stories across fantasy, romance, sci-fi and thriller genres — with thousands of readers on WebNovel.</p>
+                </div>
+                <div class="glass-card scroll-reveal">
+                    <div class="card-icon">🎨</div>
+                    <h3>Cover Designer</h3>
+                    <p>Creating stunning illustrated & WebNovel covers for authors and publishers on Fiverr.</p>
+                </div>
+                <div class="glass-card scroll-reveal">
+                    <div class="card-icon">🐧</div>
+                    <h3>The Scribe's Corner</h3>
+                    <p>Follow my journey on Instagram, YouTube and WebNovel — stories, designs, and more.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- ══ PANEL: HAND-DRAWN ══ -->
-    <div class="ctab-panel" data-panel="handdrawn" role="tabpanel">
-        <section class="covers-category-section">
-            <div class="container">
-                <div class="category-header scroll-reveal">
-                    <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#20b2aa;background:rgba(32,178,170,0.1);border-color:rgba(32,178,170,0.3);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
-                                <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
-                            </svg>
-                        </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#20b2aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Hand-drawn Covers</h2>
-                    </div>
-                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#20b2aa;border-color:#20b2aa;">Get One Like This →</a>
-                </div>
-
-                <div class="cg-detail" id="handdrawnDetail"></div>
-
-                <div class="cg-grid" id="handdrawnGrid">
-                    <!-- Add hand-drawn cover cards here when you have images -->
-                    <div style="grid-column:1/-1;text-align:center;padding:3rem;color:rgba(255,255,255,0.3);font-size:0.9rem;">
-                        Hand-drawn cover portfolio coming soon — <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" style="color:#20b2aa;">order yours on Fiverr</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ══ PANEL: ILLUSTRATED ══ -->
-    <div class="ctab-panel ctab-panel-active" data-panel="illustrated" role="tabpanel">
-        <section class="covers-category-section">
-            <div class="container">
-                <div class="category-header scroll-reveal">
-                    <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#a855f7;background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                        </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Illustrated Covers</h2>
-                    </div>
-                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#a855f7;border-color:#a855f7;">Get One Like This →</a>
-                </div>
-
-                <div class="cg-detail" id="illustratedDetail"></div>
-
-                <div class="cg-grid" id="illustratedGrid">
-                    <div class="cg-card" data-cover="ashCityOps" onclick="cgSelect('illustrated','ashCityOps',this)">
-                        <div class="cg-thumb"><img src="" data-img="ashCityOps" alt="Ash City Ops"></div>
-                        <div class="cg-name">Ash City Ops</div>
-                        <div class="cg-sub">Illustrated</div>
-                    </div>
-                    <div class="cg-card" data-cover="callerBeasts" onclick="cgSelect('illustrated','callerBeasts',this)">
-                        <div class="cg-thumb"><img src="" data-img="callerBeasts" alt="Caller of the Beasts"></div>
-                        <div class="cg-name">Caller of the Beasts</div>
-                        <div class="cg-sub">Illustrated</div>
-                    </div>
-                    <div class="cg-card" data-cover="lastSun" onclick="cgSelect('illustrated','lastSun',this)">
-                        <div class="cg-thumb"><img src="" data-img="lastSun" alt="The Last Sun"></div>
-                        <div class="cg-name">The Last Sun</div>
-                        <div class="cg-sub">Illustrated</div>
-                    </div>
-                    <div class="cg-card" data-cover="nightwatcher" onclick="cgSelect('illustrated','nightwatcher',this)">
-                        <div class="cg-thumb"><img src="" data-img="nightwatcher" alt="The Nightwatcher"></div>
-                        <div class="cg-name">The Nightwatcher</div>
-                        <div class="cg-sub">Illustrated</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ══ PANEL: FANTASY ══ -->
-    <div class="ctab-panel" data-panel="fantasy" role="tabpanel">
-        <section class="covers-category-section">
-            <div class="container">
-                <div class="category-header scroll-reveal">
-                    <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#f87171;background:rgba(248,113,113,0.1);border-color:rgba(248,113,113,0.3);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                            </svg>
-                        </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Fantasy Styled Covers</h2>
-                    </div>
-                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#f87171;border-color:#f87171;">Get One Like This →</a>
-                </div>
-
-                <div class="cg-detail" id="fantasyDetail"></div>
-
-                <div class="cg-grid" id="fantasyGrid">
-                    <div class="cg-card cg-fantasy" data-cover="queenShadows1" onclick="cgSelect('fantasy','queenShadows1',this)">
-                        <div class="cg-thumb">
-                            <img src="" data-img="queenShadows1" alt="Queen of Broken Shadows"
-                                onerror="this.src='https://placehold.co/300x450/0d0d1a/c9a84c?text=Queen+of%0ABroken+Shadows'">
-                        </div>
-                        <div class="cg-name">Queen of Broken Shadows</div>
-                        <div class="cg-sub">Fantasy Cover</div>
-                    </div>
-                    <div class="cg-card cg-fantasy" data-cover="poisonedIce1" onclick="cgSelect('fantasy','poisonedIce1',this)">
-                        <div class="cg-thumb">
-                            <img src="" data-img="poisonedIce1" alt="Poisoned Ice Obsession"
-                                onerror="this.src='https://placehold.co/300x450/0a1020/c9a84c?text=Poisoned+Ice%0AObsession'">
-                        </div>
-                        <div class="cg-name">Poisoned Ice Obsession</div>
-                        <div class="cg-sub">Dark Romance Cover</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ══ PANEL: WEBNOVEL & EBOOK ══ -->
-    <div class="ctab-panel" data-panel="webnovel" role="tabpanel">
-        <!-- HOW I MAKE COVERS -->
-        <section class="covers-category-section" style="padding-bottom:0;">
-            <div class="container">
-                <div class="category-header scroll-reveal">
-                    <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#d4af37;background:rgba(212,175,55,0.1);border-color:rgba(212,175,55,0.3);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
-                                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-                            </svg>
-                        </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">How I Make WebNovel &amp; eBook Covers</h2>
-                    </div>
-                </div>
-                <div class="process-banner glass-card scroll-reveal" onclick="openLightbox(IMAGES.processbanner,'My Cover Design Process — Character Design → Environment &amp; Mood → Final Cover with Typography')">
-                    <img src="" data-img="processbanner" alt="Cover design process">
-                    <div class="process-banner-overlay"><span>🔍 Click to enlarge</span></div>
-                </div>
-                <p class="process-caption scroll-reveal">Every cover starts with the character, then the world they inhabit, then the perfect typography to bring it all together.</p>
-            </div>
-        </section>
-
-        <section class="covers-category-section">
-            <div class="container">
-                <div class="category-header scroll-reveal">
-                    <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#d4af37;background:rgba(212,175,55,0.1);border-color:rgba(212,175,55,0.3);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                            </svg>
-                        </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">WebNovel &amp; eBook Covers</h2>
-                    </div>
-                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-secondary btn-category-order" style="color:#d4af37;border-color:#d4af37;">Get One Like This →</a>
-                </div>
-
-                <div class="cg-detail" id="webnovelDetail"></div>
-
-                <div class="cg-grid" id="webnovelGrid">
-                    <!-- existing covers -->
-                    <div class="cg-card" data-cover="godsBlessing1" onclick="cgSelect('webnovel','godsBlessing1',this)">
-                        <div class="cg-thumb"><img src="" data-img="godsBlessing1" alt="God's Blessing"></div>
-                        <div class="cg-name">God's Blessing</div>
-                        <div class="cg-sub">WebNovel · LitRPG</div>
-                    </div>
-                    <div class="cg-card" data-cover="endWorld1" onclick="cgSelect('webnovel','endWorld1',this)">
-                        <div class="cg-thumb"><img src="" data-img="endWorld1" alt="End World Tutorial"></div>
-                        <div class="cg-name">End World Tutorial</div>
-                        <div class="cg-sub">WebNovel · LitRPG</div>
-                    </div>
-                    <div class="cg-card" data-cover="cultivatingSeclusion1" onclick="cgSelect('webnovel','cultivatingSeclusion1',this)">
-                        <div class="cg-thumb"><img src="" data-img="cultivatingSeclusion1" alt="Cultivating in Seclusion"></div>
-                        <div class="cg-name">Cultivating in Seclusion</div>
-                        <div class="cg-sub">WebNovel · Cultivation</div>
-                    </div>
-                    <div class="cg-card" data-cover="daoReincarnation1" onclick="cgSelect('webnovel','daoReincarnation1',this)">
-                        <div class="cg-thumb"><img src="" data-img="daoReincarnation1" alt="The Dao of Reincarnation"></div>
-                        <div class="cg-name">Dao of Reincarnation</div>
-                        <div class="cg-sub">WebNovel · Cultivation</div>
-                    </div>
-                    <div class="cg-card" data-cover="vxv1" onclick="cgSelect('webnovel','vxv1',this)">
-                        <div class="cg-thumb"><img src="" data-img="vxv1" alt="Villainess x Villain"></div>
-                        <div class="cg-name">Villainess x Villain</div>
-                        <div class="cg-sub">WebNovel Cover</div>
-                    </div>
-                    <div class="cg-card" data-cover="redVoid1" onclick="cgSelect('webnovel','redVoid1',this)">
-                        <div class="cg-thumb"><img src="" data-img="redVoid1" alt="Red Void Ascension"></div>
-                        <div class="cg-name">Red Void Ascension</div>
-                        <div class="cg-sub">WebNovel Cover</div>
-                    </div>
-                    <!-- ── NEW covers ── -->
-                    <div class="cg-card" data-cover="angelOfDarkness1" onclick="cgSelect('webnovel','angelOfDarkness1',this)">
-                        <div class="cg-thumb"><img src="" data-img="angelOfDarkness1" alt="Angel of Darkness"></div>
-                        <div class="cg-name">Angel of Darkness</div>
-                        <div class="cg-sub">WebNovel · Dark Fantasy</div>
-                    </div>
-                    <div class="cg-card" data-cover="levelUpSleep3" onclick="cgSelect('webnovel','levelUpSleep3',this)">
-                        <div class="cg-thumb"><img src="" data-img="levelUpSleep3" alt="Level Up While I Sleep"></div>
-                        <div class="cg-name">Level Up While I Sleep</div>
-                        <div class="cg-sub">WebNovel · LitRPG</div>
-                    </div>
-                    <div class="cg-card" data-cover="limitBreaker1" onclick="cgSelect('webnovel','limitBreaker1',this)">
-                        <div class="cg-thumb"><img src="" data-img="limitBreaker1" alt="Limit Breaker"></div>
-                        <div class="cg-name">Limit Breaker</div>
-                        <div class="cg-sub">WebNovel · Action</div>
-                    </div>
-                    <div class="cg-card" data-cover="demonicStreamer2" onclick="cgSelect('webnovel','demonicStreamer2',this)">
-                        <div class="cg-thumb"><img src="" data-img="demonicStreamer2" alt="Demonic Streamer System"></div>
-                        <div class="cg-name">Demonic Streamer System</div>
-                        <div class="cg-sub">WebNovel · System</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!-- END TABBED GALLERY -->
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img src="" alt="" id="lightboxImage">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
+    <section class="recent-work">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Recent Projects</h2>
+            <!-- ↓ populated automatically by projects.js — do NOT edit cards here -->
+            <div class="work-grid" id="recentProjectsGrid"></div>
         </div>
-    </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Silence of Scribes. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/silenceofscribes/" target="_blank" class="social-link">Instagram</a>
-                <a href="https://youtube.com/@silenceofscribes" target="_blank" class="social-link">YouTube</a>
-                <a href="https://www.fiverr.com/s/bd6y12N" target="_blank" class="social-link">Fiverr</a>
+                <a href="https://www.instagram.com/silenceofscribes/" target="_blank" rel="noreferrer noopener" class="social-link">Instagram</a>
+                <a href="https://youtube.com/@silenceofscribes" target="_blank" rel="noreferrer noopener" class="social-link">YouTube</a>
+                <a href="https://www.fiverr.com/s/bd6y12N" target="_blank" rel="noreferrer noopener" class="social-link">Fiverr</a>
                 <a href="https://bit.ly/4cU90Tj" target="_blank" rel="noreferrer noopener" class="social-link">WebNovel</a>
             </div>
         </div>
     </footer>
 
     <script src="./images.js"></script>
+    <script src="./projects.js"></script>
     <script src="./main.js"></script>
-    <script>
-        // ── Lightbox ──────────────────────────────────────────────
-        function openLightbox(src, caption) {
-            document.getElementById('lightboxImage').src = src;
-            document.getElementById('lightboxCaption').textContent = caption;
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
-        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
-
-        // ── Cover data ────────────────────────────────────────────
-        const COVERS = {
-            // Illustrated
-            lastSun: {
-                tag: 'Illustrated Cover', title: 'The Last Sun',
-                desc: 'A lone rider beneath a setting sun, the ghostly silhouette of a winged face looming over the horizon — epic, cinematic, unforgettable.',
-                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [{ key: 'lastSun', label: 'Version 1' }]
-            },
-            nightwatcher: {
-                tag: 'Illustrated Cover', title: 'The Nightwatcher',
-                desc: 'A cloaked guardian stands before a towering teal-lit structure — mysterious, atmospheric, and hauntingly beautiful.',
-                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [{ key: 'nightwatcher', label: 'Version 1' }]
-            },
-            ashCityOps: {
-                tag: 'Illustrated Cover', title: 'Ash City Ops',
-                desc: 'A lone gunman walks through burning ruins beneath a colossal shadow — explosive orange and purple tones for a post-apocalyptic world on fire.',
-                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [{ key: 'ashCityOps', label: 'Version 1' }]
-            },
-            callerBeasts: {
-                tag: 'Illustrated Cover', title: 'Caller of the Beasts',
-                desc: 'A summoner faces a colossal dragon against a blazing red sky — fireballs, ember-filled air, and raw epic fantasy energy.',
-                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [{ key: 'callerBeasts', label: 'Version 1' }]
-            },
-            // Fantasy
-            queenShadows1: {
-                tag: 'Fantasy Cover', title: 'Queen of Broken Shadows',
-                desc: 'A jewelled crown draped in moonlit smoke, blue butterflies scattered across a deep midnight backdrop — dark romance, regal and mysterious.',
-                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [{ key: 'queenShadows1', label: 'Version 1', placeholder: 'https://placehold.co/300x450/0d0d1a/c9a84c?text=V1' }]
-            },
-            poisonedIce1: {
-                tag: 'Dark Romance Cover', title: 'Poisoned Ice Obsession',
-                desc: 'A dark romance wrapped in frost and danger — icy tones and brooding atmosphere for a story where obsession cuts as cold as poison.',
-                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
-                versions: [{ key: 'poisonedIce1', label: 'Version 1', placeholder: 'https://placehold.co/300x450/0a1020/c9a84c?text=V1' }]
-            },
-            // WebNovel — existing
-            redVoid1: {
-                tag: 'WebNovel Cover', title: 'Red Void Ascension',
-                desc: 'A silver-haired warrior stepping through a blood-red void, demons of crimson chaos swirling around her.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'redVoid1', label: 'Version 1' }, { key: 'redVoid2', label: 'Version 2' }]
-            },
-            vxv1: {
-                tag: 'WebNovel Cover', title: 'Villainess x Villain',
-                desc: '"They are obsessed with each other." Three cover versions — from thorned rose elegance to glowing dark magic.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'vxv1', label: 'Version 1' }, { key: 'vxv2', label: 'Version 2' }, { key: 'vxv3', label: 'Version 3' }]
-            },
-            endWorld1: {
-                tag: 'WebNovel Cover · LitRPG', title: 'End World Tutorial',
-                desc: 'A level-1 adventurer stands against an apocalyptic beast — quest pop-ups, HP/MP bars, and raw chaos. Three colour palettes.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'endWorld1', label: 'Version 1' }, { key: 'endWorld2', label: 'Version 2' }, { key: 'endWorld3', label: 'Version 3' }]
-            },
-            daoReincarnation1: {
-                tag: 'WebNovel Cover · Cultivation', title: 'The Dao of Reincarnation',
-                desc: 'A lone cultivator strides through swirling ink and past lives — black-and-white Chinese ink painting with gold title treatment.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'daoReincarnation1', label: 'Version 1' }, { key: 'daoReincarnation2', label: 'Version 2' }, { key: 'daoReincarnation3', label: 'Version 3' }]
-            },
-            cultivatingSeclusion1: {
-                tag: 'WebNovel Cover · Cultivation', title: "I've Been Cultivating in Seclusion",
-                desc: 'A serene cultivator meditates atop a mountain cliff, cherry blossoms drifting, two chickens keeping vigil.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'cultivatingSeclusion1', label: 'Version 1' }]
-            },
-            godsBlessing1: {
-                tag: 'WebNovel Cover · LitRPG', title: "God's Blessing: Every Stream Donation I Get 10X Stats",
-                desc: 'A charismatic streamer wields godlike power — stream UI overlays, SP donations from Agni and Anubis, level-ups all firing at once.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'godsBlessing1', label: 'Version 1' }, { key: 'godsBlessing2', label: 'Version 2' }, { key: 'godsBlessing3', label: 'Version 3' }]
-            },
-            // WebNovel — NEW
-            angelOfDarkness1: {
-                tag: 'WebNovel Cover · Dark Fantasy', title: 'Angel of Darkness',
-                desc: 'A fallen angel warrior cloaked in obsidian armour stands before a blood-red moon — wings of shadow unfurled, sword in hand, ember fragments filling the air. Dark, epic, and unmistakably powerful.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'angelOfDarkness1', label: 'Version 1' }]
-            },
-            levelUpSleep3: {
-                tag: 'WebNovel Cover · LitRPG', title: 'Level Up While I Sleep',
-                desc: 'A white-haired protagonist in pyjamas radiates explosive dual fire-and-lightning energy — the ultimate power fantasy wrapped in the most unexpected outfit. Three versions explore different art styles and energy palettes.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'levelUpSleep3', label: 'Version 1' }, { key: 'levelUpSleep2', label: 'Version 2' }, { key: 'levelUpSleep1', label: 'Version 3' }]
-            },
-            limitBreaker1: {
-                tag: 'WebNovel Cover · Action', title: 'Limit Breaker: Reborn as a Hunter',
-                desc: 'A white-haired hunter kneels on a skull-strewn battlefield, gripping an ice-blue sword that crackles with frozen power — red jacket, black gloves, stormy crimson sky. Raw, intense, and unforgettable.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'limitBreaker1', label: 'Version 1' }]
-            },
-            demonicStreamer2: {
-                tag: 'WebNovel Cover · System', title: 'Demonic Streamer System',
-                desc: 'A duality portrait — half human, half demon — crimson tendrils and glowing veins consuming a face that straddles two worlds. Two versions explore soft-close atmospheric vs bold fire-lit epic compositions.',
-                fiverr: 'https://www.fiverr.com/s/akLWRGG',
-                versions: [{ key: 'demonicStreamer2', label: 'Version 1' }, { key: 'demonicStreamer1', label: 'Version 2' }]
-            },
-        };
-
-        // ── State ─────────────────────────────────────────────────
-        const cgActive = { handdrawn: null, illustrated: null, fantasy: null, webnovel: null };
-
-        // ── Render detail panel ───────────────────────────────────
-        function cgRenderDetail(panelId, coverKey) {
-            const c = COVERS[coverKey];
-            const detailEl = document.getElementById(panelId + 'Detail');
-            const firstVer = c.versions[0];
-            const firstSrc = (window.IMAGES && IMAGES[firstVer.key]) || firstVer.placeholder || '';
-            const firstErr = firstVer.placeholder ? `onerror="this.src='${firstVer.placeholder}'"` : '';
-            const isFantasy = panelId === 'fantasy';
-
-            const thumbsHtml = c.versions.length > 1 ? `
-                <div class="cg-versions-label">Choose a version</div>
-                <div class="cg-versions" id="${panelId}Versions">
-                    ${c.versions.map((v, i) => {
-                        const src = (window.IMAGES && IMAGES[v.key]) || v.placeholder || '';
-                        const err = v.placeholder ? `onerror="this.src='${v.placeholder}'"` : '';
-                        return `<div class="cg-ver-thumb${i === 0 ? ' cg-ver-active' : ''}" onclick="cgSwitchVer('${panelId}','${coverKey}',this,'${v.key}')">
-                            <img src="${src}" ${err} alt="${v.label}">
-                            <span>${v.label}</span>
-                        </div>`;
-                    }).join('')}
-                </div>` : '';
-
-            detailEl.innerHTML = `
-                <div class="cg-detail-inner">
-                    <div class="cg-detail-left">
-                        <div class="${isFantasy ? 'cg-detail-book' : 'cg-detail-flat'}" onclick="openLightbox(document.getElementById('${panelId}MainImg').src,'${c.title}')">
-                            <img src="${firstSrc}" ${firstErr} id="${panelId}MainImg" alt="${c.title}">
-                        </div>
-                        <div class="cg-detail-zoom">Click to enlarge</div>
-                    </div>
-                    <div class="cg-detail-right">
-                        <button class="cg-close-btn" onclick="cgClose('${panelId}')">✕</button>
-                        <span class="cg-detail-tag">${c.tag}</span>
-                        <div class="cg-detail-title">${c.title}</div>
-                        <div class="cg-detail-desc">${c.desc}</div>
-                        ${thumbsHtml}
-                        <div class="cg-detail-actions">
-                            <a href="${c.fiverr}" target="_blank" class="btn btn-primary">Get One Like This →</a>
-                            <button class="btn btn-secondary" onclick="openLightbox(document.getElementById('${panelId}MainImg').src,'${c.title}')">Enlarge</button>
-                        </div>
-                    </div>
-                </div>`;
-
-            detailEl.classList.add('cg-detail-open');
-            detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function cgSwitchVer(panelId, coverKey, thumbEl, imgKey) {
-            const c = COVERS[coverKey];
-            const ver = c.versions.find(v => v.key === imgKey);
-            const src = (window.IMAGES && IMAGES[imgKey]) || ver?.placeholder || '';
-            const mainImg = document.getElementById(panelId + 'MainImg');
-            mainImg.style.opacity = '0';
-            mainImg.style.transition = 'opacity 0.2s ease';
-            setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 200);
-            thumbEl.closest('.cg-versions').querySelectorAll('.cg-ver-thumb').forEach(t => t.classList.remove('cg-ver-active'));
-            thumbEl.classList.add('cg-ver-active');
-        }
-
-        function cgSelect(panelId, coverKey, cardEl) {
-            const grid = document.getElementById(panelId + 'Grid');
-            if (cgActive[panelId] === coverKey) { cgClose(panelId); return; }
-            cgActive[panelId] = coverKey;
-            grid.querySelectorAll('.cg-card').forEach(c => c.classList.remove('cg-active'));
-            cardEl.classList.add('cg-active');
-            cgRenderDetail(panelId, coverKey);
-        }
-
-        function cgClose(panelId) {
-            cgActive[panelId] = null;
-            const detailEl = document.getElementById(panelId + 'Detail');
-            detailEl.classList.remove('cg-detail-open');
-            detailEl.innerHTML = '';
-            document.getElementById(panelId + 'Grid').querySelectorAll('.cg-card').forEach(c => c.classList.remove('cg-active'));
-        }
-
-        // ── Parallax tilt ─────────────────────────────────────────
-        function attachParallax(grid) {
-            grid.addEventListener('mousemove', e => {
-                grid.querySelectorAll('.cg-card').forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const dx = (e.clientX - rect.left - rect.width/2) / rect.width;
-                    const dy = (e.clientY - rect.top - rect.height/2) / rect.height;
-                    card.style.transform = `perspective(700px) rotateX(${(-dy*8).toFixed(2)}deg) rotateY(${(dx*8).toFixed(2)}deg) translateY(-4px)`;
-                    card.style.transition = 'transform 0.1s ease';
-                    card.style.animationPlayState = 'paused';
-                });
-            });
-            grid.addEventListener('mouseleave', () => {
-                grid.querySelectorAll('.cg-card').forEach(card => {
-                    card.style.transform = '';
-                    card.style.transition = 'transform 0.5s ease';
-                    card.style.animationPlayState = 'running';
-                });
-            });
-        }
-        document.querySelectorAll('.cg-grid').forEach(attachParallax);
-
-        // ── Tab switching ─────────────────────────────────────────
-        const ctabs   = document.querySelectorAll('.ctab');
-        const cpanels = document.querySelectorAll('.ctab-panel');
-
-        ctabs.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const target = btn.dataset.tab;
-                ctabs.forEach(t => { t.classList.remove('ctab-active'); t.setAttribute('aria-selected','false'); });
-                btn.classList.add('ctab-active');
-                btn.setAttribute('aria-selected','true');
-                cpanels.forEach(p => p.classList.remove('ctab-panel-active'));
-                const panel = document.querySelector(`.ctab-panel[data-panel="${target}"]`);
-                panel.classList.add('ctab-panel-active');
-                panel.querySelectorAll('.scroll-reveal').forEach(el => {
-                    el.classList.remove('active','revealed');
-                    setTimeout(() => el.classList.add('active','revealed'), 80);
-                });
-                panel.querySelectorAll('.cg-grid').forEach(attachParallax);
-                if (window.applyImages) window.applyImages();
-            });
-        });
-    </script>
 </body>
 </html>
