@@ -838,13 +838,6 @@
                 </div>`;
 
             detailEl.classList.add('cg-detail-open');
-            const yOffset = -120;
-const y = detailEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-window.scrollTo({
-    top: y,
-    behavior: 'smooth'
-});
         }
 
         function cgSwitchVer(panelId, coverKey, thumbEl, imgKey) {
