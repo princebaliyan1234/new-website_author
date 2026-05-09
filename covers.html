@@ -29,30 +29,25 @@
         }
         .gig-card[data-gig="handdrawn"]::before { background: linear-gradient(90deg, #20b2aa, #48d1cc); }
 
-        
-      /* Illustrated — orange */
-.gig-card[data-gig="illustrated"] .gig-tag     { background: rgba(255,107,53,0.15); color: #ff6b35; }
-.gig-card[data-gig="illustrated"] .gig-svg     { color: #ff6b35; }
-.gig-card[data-gig="illustrated"] .gig-features li::before { color: #ff6b35; }
-
-.gig-card[data-gig="illustrated"] .btn-gig     {
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
-    box-shadow: 0 4px 15px rgba(255,107,53,0.4);
-    color: #ffffff;
-}
-
-.gig-card[data-gig="illustrated"] .btn-gig:hover {
-    box-shadow: 0 6px 20px rgba(255,107,53,0.6);
-}
-
-.gig-card[data-gig="illustrated"]:hover {
-    box-shadow: 0 10px 30px rgba(255,107,53,0.25);
-    border-color: rgba(255,107,53,0.3);
-}
-
-.gig-card[data-gig="illustrated"]::before {
-    background: linear-gradient(90deg, #ff6b35, #ff8c42);
-}
+        /* Illustrated — orange */
+        .gig-card[data-gig="illustrated"] .gig-tag     { background: rgba(255,107,53,0.15); color: #ff6b35; }
+        .gig-card[data-gig="illustrated"] .gig-svg     { color: #ff6b35; }
+        .gig-card[data-gig="illustrated"] .gig-features li::before { color: #ff6b35; }
+        .gig-card[data-gig="illustrated"] .btn-gig     {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+            color: #ffffff;
+        }
+        .gig-card[data-gig="illustrated"] .btn-gig:hover {
+            box-shadow: 0 6px 20px rgba(255,107,53,0.6);
+        }
+        .gig-card[data-gig="illustrated"]:hover {
+            box-shadow: 0 10px 30px rgba(255,107,53,0.25);
+            border-color: rgba(255,107,53,0.3);
+        }
+        .gig-card[data-gig="illustrated"]::before {
+            background: linear-gradient(90deg, #ff6b35, #ff8c42);
+        }
 
         /* Fantasy — deep/dark: crimson/deep red */
         .gig-card[data-gig="fantasy"] .gig-tag         { background: rgba(185,28,28,0.15); color: #f87171; }
@@ -72,48 +67,45 @@
         }
         .gig-card[data-gig="fantasy"]::before { background: linear-gradient(90deg, #991b1b, #dc2626); }
 
-      /* WebNovel — purple */
-.gig-card[data-gig="webnovel"] .gig-tag        { background: rgba(147,51,234,0.15); color: #a855f7; }
-.gig-card[data-gig="webnovel"] .gig-svg        { color: #a855f7; }
-.gig-card[data-gig="webnovel"] .gig-features li::before { color: #a855f7; }
+        /* WebNovel — purple */
+        .gig-card[data-gig="webnovel"] .gig-tag        { background: rgba(147,51,234,0.15); color: #a855f7; }
+        .gig-card[data-gig="webnovel"] .gig-svg        { color: #a855f7; }
+        .gig-card[data-gig="webnovel"] .gig-features li::before { color: #a855f7; }
+        .gig-card[data-gig="webnovel"] .btn-gig        {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            box-shadow: 0 4px 15px rgba(147,51,234,0.4);
+            color: #ffffff;
+        }
+        .gig-card[data-gig="webnovel"] .btn-gig:hover  {
+            box-shadow: 0 6px 20px rgba(147,51,234,0.6);
+        }
+        .gig-card[data-gig="webnovel"]:hover {
+            box-shadow: 0 10px 30px rgba(147,51,234,0.25);
+            border-color: rgba(147,51,234,0.3);
+        }
+        .gig-card[data-gig="webnovel"]::before {
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+        }
 
-.gig-card[data-gig="webnovel"] .btn-gig        {
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
-    box-shadow: 0 4px 15px rgba(147,51,234,0.4);
-    color: #ffffff;
-}
-
-.gig-card[data-gig="webnovel"] .btn-gig:hover  {
-    box-shadow: 0 6px 20px rgba(147,51,234,0.6);
-}
-
-.gig-card[data-gig="webnovel"]:hover {
-    box-shadow: 0 10px 30px rgba(147,51,234,0.25);
-    border-color: rgba(147,51,234,0.3);
-}
-
-.gig-card[data-gig="webnovel"]::before {
-    background: linear-gradient(90deg, #7c3aed, #a855f7);
-}
         /* ── Tab colour overrides per category ── */
         /* Hand-drawn tab */
         .ctab[data-tab="handdrawn"].ctab-active        { color: #20b2aa; }
         .ctab[data-tab="handdrawn"].ctab-active::after { background: #20b2aa; transform: translateX(-50%) scaleX(1); }
         /* Illustrated tab */
-.ctab[data-tab="illustrated"].ctab-active        { color: #ff6b35; }
-.ctab[data-tab="illustrated"].ctab-active::after {
-    background: #ff6b35;
-    transform: translateX(-50%) scaleX(1);
-}
+        .ctab[data-tab="illustrated"].ctab-active        { color: #ff6b35; }
+        .ctab[data-tab="illustrated"].ctab-active::after {
+            background: #ff6b35;
+            transform: translateX(-50%) scaleX(1);
+        }
         /* Fantasy tab */
         .ctab[data-tab="fantasy"].ctab-active        { color: #f87171; }
         .ctab[data-tab="fantasy"].ctab-active::after { background: #dc2626; transform: translateX(-50%) scaleX(1); }
         /* WebNovel tab */
-       .ctab[data-tab="webnovel"].ctab-active        { color: #a855f7; }
-.ctab[data-tab="webnovel"].ctab-active::after {
-    background: #a855f7;
-    transform: translateX(-50%) scaleX(1);
-}
+        .ctab[data-tab="webnovel"].ctab-active        { color: #a855f7; }
+        .ctab[data-tab="webnovel"].ctab-active::after {
+            background: #a855f7;
+            transform: translateX(-50%) scaleX(1);
+        }
 
         /* ══════════════════════════════════════════
            TAB GALLERY — scoped styles (unchanged)
@@ -275,6 +267,20 @@
         .cg-ver-thumb img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
         .cg-ver-thumb span { display: block; font-size: 9px; text-align: center; padding: 3px 0; color: rgba(255,255,255,0.45); background: rgba(0,0,0,0.45); }
         .cg-detail-actions { display: flex; gap: 10px; margin-top: 4px; }
+        /* Portfolio attribution notice */
+        .cg-portfolio-notice {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 4px 10px;
+            width: fit-content;
+            letter-spacing: 0.03em;
+        }
         @media (max-width: 768px) {
             .cg-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
             .cg-detail-inner { grid-template-columns: 1fr; }
@@ -321,7 +327,7 @@
         <div class="container">
             <div class="get-cover-header scroll-reveal">
                 <h2 class="section-title">Get Your Cover Designed</h2>
-                <p class="get-cover-intro">Love what you see? Let me craft the perfect cover for your story.</p>
+                <p class="get-cover-intro">A cover is your story's first impression — and readers decide within seconds whether to click or scroll away.</p>
             </div>
             <div class="gig-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
 
@@ -333,19 +339,19 @@
                         </svg>
                     </div>
                     <div class="gig-content">
-                        <span class="gig-tag">Hand-drawn</span>
-                        <h3>Hand-drawn Cover Art</h3>
-                        <p>Authentic hand-crafted illustrations with a personal touch — warm, expressive, and uniquely yours. Perfect for stories that need heart and soul on their cover.</p>
+                        <span class="gig-tag">Hand-Drawn</span>
+                        <h3>Hand-Drawn Cover Art</h3>
+                        <p>These hand-drawn covers are crafted to give your story a strong identity — original, emotional, and impossible to ignore. Perfect for authors who want a memorable visual presence that readers can instantly connect with, without looking mass-produced or AI-generated.</p>
                         <ul class="gig-features">
-                            <li>Original hand-drawn artistry</li>
-                            <li>Warm, character-driven compositions</li>
-                            <li>Multiple revision rounds</li>
+                            <li>PSD source files &amp; full commercial licensing</li>
+                            <li>High-quality PNG &amp; JPEG + optimized web formats</li>
+                            <li>Platform-customized dimensions &amp; promotional mockups</li>
                         </ul>
                         <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
 
-                <!-- Illustrated — violet/unique -->
+                <!-- Illustrated — orange -->
                 <div class="gig-card glass-card scroll-reveal" data-gig="illustrated">
                     <div class="gig-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
@@ -355,11 +361,11 @@
                     <div class="gig-content">
                         <span class="gig-tag">Illustrated</span>
                         <h3>Illustrated Book Covers</h3>
-                        <p>Stunning hand-crafted illustrated covers with rich detail, vivid characters, and epic scenes — perfect for fantasy, sci-fi, and beyond.</p>
+                        <p>Designed using detailed artwork and professional Photoshop composition, these covers are made for stories that need to stand out instantly. Every cover focuses on atmosphere, composition, readability, and emotional impact — helping your book feel polished and market-ready from the very first glance.</p>
                         <ul class="gig-features">
-                            <li>Custom character &amp; scene illustration</li>
-                            <li>High-res print &amp; digital formats</li>
-                            <li>Multiple revision rounds</li>
+                            <li>PSD source files &amp; full commercial licensing</li>
+                            <li>High-quality PNG &amp; JPEG + optimized web formats</li>
+                            <li>Platform-customized dimensions &amp; promotional mockups</li>
                         </ul>
                         <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
@@ -374,18 +380,18 @@
                     </div>
                     <div class="gig-content">
                         <span class="gig-tag">Fantasy</span>
-                        <h3>Fantasy Styled Covers</h3>
-                        <p>Dark romance, mythology, and magic — ornate, atmospheric covers for fantasy novels that draw readers in before they read a single word.</p>
+                        <h3>Fantasy Styled Typography Covers</h3>
+                        <p>Created with advanced Photoshop typography and fantasy-focused design composition, these covers build instant intrigue and atmosphere. They focus heavily on typography, mood, magical atmosphere, and genre identity — ideal for dark fantasy, romance fantasy, mythology, and adventure stories.</p>
                         <ul class="gig-features">
-                            <li>Dark fantasy &amp; romance aesthetics</li>
-                            <li>Rich atmospheric compositions</li>
-                            <li>Multiple revision rounds</li>
+                            <li>PSD source files &amp; full commercial licensing</li>
+                            <li>High-quality PNG &amp; JPEG + optimized web formats</li>
+                            <li>Platform-customized dimensions &amp; promotional mockups</li>
                         </ul>
                         <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
 
-                <!-- WebNovel — gold/premium -->
+                <!-- WebNovel — purple/premium -->
                 <div class="gig-card glass-card scroll-reveal" data-gig="webnovel">
                     <div class="gig-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gig-svg">
@@ -397,11 +403,11 @@
                     <div class="gig-content">
                         <span class="gig-tag">WebNovel</span>
                         <h3>WebNovel &amp; eBook Covers</h3>
-                        <p>Eye-catching covers tailored specifically for WebNovel platform dimensions and aesthetics — designed to stand out and attract readers.</p>
+                        <p>Affordable, versatile, and proven effective for online fiction platforms where visibility and click-through rates matter most. Created using advanced creative tools including Adobe Photoshop, Midjourney, Ideogram, and other professional workflows — optimized for Webnovel and Royal Road.</p>
                         <ul class="gig-features">
-                            <li>WebNovel-optimised dimensions</li>
-                            <li>Genre-matching visual style</li>
-                            <li>Fast turnaround</li>
+                            <li>PSD source files &amp; full commercial licensing</li>
+                            <li>Discord banner, profile picture &amp; platform assets</li>
+                            <li>Patreon banner &amp; chapter update promotional materials</li>
                         </ul>
                         <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
@@ -465,9 +471,10 @@
                 <div class="cg-detail" id="handdrawnDetail"></div>
 
                 <div class="cg-grid" id="handdrawnGrid">
-                    <!-- Add hand-drawn cover cards here when you have images -->
-                    <div style="grid-column:1/-1;text-align:center;padding:3rem;color:rgba(255,255,255,0.3);font-size:0.9rem;">
-                        Hand-drawn cover portfolio coming soon — <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" style="color:#20b2aa;">order yours on Fiverr</a>
+                    <div class="cg-card" data-cover="battleGearTournament1" onclick="cgSelect('handdrawn','battleGearTournament1',this)">
+                        <div class="cg-thumb"><img src="" data-img="battleGearTournament1" alt="Battle Gear Tournament"></div>
+                        <div class="cg-name">Battle Gear Tournament</div>
+                        <div class="cg-sub">Hand-drawn · Anime / Sci-fi</div>
                     </div>
                 </div>
             </div>
@@ -480,14 +487,14 @@
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#a855f7;background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">
+                        <div class="category-icon-wrap" style="color:#ff6b35;background:rgba(255,107,53,0.1);border-color:rgba(255,107,53,0.3);">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Illustrated Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Illustrated Covers</h2>
                     </div>
-                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#a855f7;border-color:#a855f7;">Get One Like This →</a>
+                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#ff6b35;border-color:#ff6b35;">Get One Like This →</a>
                 </div>
 
                 <div class="cg-detail" id="illustratedDetail"></div>
@@ -565,12 +572,12 @@
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#d4af37;background:rgba(212,175,55,0.1);border-color:rgba(212,175,55,0.3);">
+                        <div class="category-icon-wrap" style="color:#a855f7;background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
                                 <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">How I Make WebNovel &amp; eBook Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">How I Make WebNovel &amp; eBook Covers</h2>
                     </div>
                 </div>
                 <div class="process-banner glass-card scroll-reveal" onclick="openLightbox(IMAGES.processbanner,'My Cover Design Process — Character Design → Environment &amp; Mood → Final Cover with Typography')">
@@ -585,15 +592,15 @@
             <div class="container">
                 <div class="category-header scroll-reveal">
                     <div class="category-title-row">
-                        <div class="category-icon-wrap" style="color:#d4af37;background:rgba(212,175,55,0.1);border-color:rgba(212,175,55,0.3);">
+                        <div class="category-icon-wrap" style="color:#a855f7;background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="20" height="20">
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                             </svg>
                         </div>
-                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">WebNovel &amp; eBook Covers</h2>
+                        <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">WebNovel &amp; eBook Covers</h2>
                     </div>
-                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-secondary btn-category-order" style="color:#d4af37;border-color:#d4af37;">Get One Like This →</a>
+                    <a href="https://www.fiverr.com/s/akLWRGG" target="_blank" class="btn btn-secondary btn-category-order" style="color:#a855f7;border-color:#a855f7;">Get One Like This →</a>
                 </div>
 
                 <div class="cg-detail" id="webnovelDetail"></div>
@@ -697,6 +704,14 @@
 
         // ── Cover data ────────────────────────────────────────────
         const COVERS = {
+            // Hand-drawn
+            battleGearTournament1: {
+                tag: 'Hand-Drawn Cover', title: 'Battle Gear Tournament',
+                desc: 'A fully hand-drawn anime-style cover for a sci-fi action story set on Royal Road. The MC — a sword master with blonde hair and white-red armour — wields a complex blue-and-red blade against a neon-lit futuristic cityscape. Created without AI or advanced compositing tools. All usage rights belong to the author/buyer upon delivery.',
+                fiverr: 'https://www.fiverr.com/s/xX3mvoD',
+                versions: [{ key: 'battleGearTournament1', label: 'Cover' }],
+                portfolioNotice: 'Client commission — ownership rights held by the buyer.'
+            },
             // Illustrated
             lastSun: {
                 tag: 'Illustrated Cover', title: 'The Last Sun',
@@ -824,6 +839,10 @@
                     }).join('')}
                 </div>` : '';
 
+            const noticeHtml = c.portfolioNotice
+                ? `<span class="cg-portfolio-notice">🔒 ${c.portfolioNotice}</span>`
+                : '';
+
             detailEl.innerHTML = `
                 <div class="cg-detail-inner">
                     <div class="cg-detail-left">
@@ -837,6 +856,7 @@
                         <span class="cg-detail-tag">${c.tag}</span>
                         <div class="cg-detail-title">${c.title}</div>
                         <div class="cg-detail-desc">${c.desc}</div>
+                        ${noticeHtml}
                         ${thumbsHtml}
                         <div class="cg-detail-actions">
                             <a href="${c.fiverr}" target="_blank" class="btn btn-primary">Get One Like This →</a>
@@ -846,7 +866,16 @@
                 </div>`;
 
             detailEl.classList.add('cg-detail-open');
-            detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // ── FIX: scroll detail panel into center of viewport ──
+            requestAnimationFrame(() => {
+                const rect = detailEl.getBoundingClientRect();
+                const detailHeight = rect.height;
+                const viewportHeight = window.innerHeight;
+                // Aim to center the panel vertically in the viewport
+                const targetScrollTop = window.scrollY + rect.top - (viewportHeight / 2) + (detailHeight / 2);
+                window.scrollTo({ top: Math.max(0, targetScrollTop), behavior: 'smooth' });
+            });
         }
 
         function cgSwitchVer(panelId, coverKey, thumbEl, imgKey) {
