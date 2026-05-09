@@ -47,6 +47,9 @@ window.IMAGES = {
     // Demonic Streamer System (v2 = main)
     demonicStreamer1: 'images/demonic-streamer-system-1.png',
     demonicStreamer2: 'images/demonic-streamer-system-2.png',
+    // ── HAND-DRAWN COVERS ───────────────────────────────────
+    // Battle Gear Tournament (Hand-drawn, client commission)
+    battleGearTournament1: 'images/battle-gear-tournament.png',
 };
 
 function applyImages() {
