@@ -47,6 +47,11 @@ window.IMAGES = {
     // Demonic Streamer System (v2 = main)
     demonicStreamer1: 'images/demonic-streamer-system-1.png',
     demonicStreamer2: 'images/demonic-streamer-system-2.png',
+    // ── FANTASY COVERS ──────────────────────────────────────
+    // Fireflies of Dawn
+    firefliesOfDawn1:  'images/fireflies-of-dawn.png',
+    // Curse of Golden Soul
+    curseOfGoldenSoul1: 'images/curse-of-golden-soul.jpg',
     // ── HAND-DRAWN COVERS ───────────────────────────────────
     // Battle Gear Tournament (Hand-drawn, client commission)
     battleGearTournament1: 'images/battle-gear-tournament.png',
