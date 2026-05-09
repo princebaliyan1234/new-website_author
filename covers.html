@@ -347,7 +347,7 @@
                             <li>High-quality PNG &amp; JPEG + optimized web formats</li>
                             <li>Platform-customized dimensions &amp; promotional mockups</li>
                         </ul>
-                        <a href="https://www.fiverr.com/s/VYyW0Z5" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
+                        <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-gig">Order on Fiverr →</a>
                     </div>
                 </div>
 
@@ -465,7 +465,7 @@
                         </div>
                         <h2 class="category-heading" style="background:linear-gradient(135deg,#fff,#20b2aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Hand-drawn Covers</h2>
                     </div>
-                    <a href="https://www.fiverr.com/s/VYyW0Z5" target="_blank" class="btn btn-secondary btn-category-order" style="color:#20b2aa;border-color:#20b2aa;">Get One Like This →</a>
+                    <a href="https://www.fiverr.com/s/xX3mvoD" target="_blank" class="btn btn-secondary btn-category-order" style="color:#20b2aa;border-color:#20b2aa;">Get One Like This →</a>
                 </div>
 
                 <div class="cg-detail" id="handdrawnDetail"></div>
@@ -977,6 +977,42 @@
                 if (window.applyImages) window.applyImages();
             });
         });
+
+        // ── Hash-based deep linking ───────────────────────────
+        // Reads URL hash like covers.html#fantasy~firefliesOfDawn1
+        // Switches to correct tab, then opens that cover's detail panel
+        function openFromHash() {
+            const hash = window.location.hash.slice(1);
+            if (!hash) return;
+            const [tabId, coverKey] = hash.split('~');
+            if (!tabId) return;
+
+            // 1. Switch tab
+            const targetTab = document.querySelector(`.ctab[data-tab="${tabId}"]`);
+            if (!targetTab) return;
+            ctabs.forEach(t => { t.classList.remove('ctab-active'); t.setAttribute('aria-selected','false'); });
+            targetTab.classList.add('ctab-active');
+            targetTab.setAttribute('aria-selected','true');
+            cpanels.forEach(p => p.classList.remove('ctab-panel-active'));
+            const panel = document.querySelector(`.ctab-panel[data-panel="${tabId}"]`);
+            if (!panel) return;
+            panel.classList.add('ctab-panel-active');
+            panel.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('active','revealed'));
+            panel.querySelectorAll('.cg-grid').forEach(attachParallax);
+            if (window.applyImages) window.applyImages();
+
+            // 2. Open cover detail
+            if (!coverKey) return;
+            setTimeout(() => {
+                const card = panel.querySelector(`.cg-card[data-cover="${coverKey}"]`);
+                if (!card) return;
+                cgSelect(tabId, coverKey, card);
+                document.getElementById('coverTabsBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 150);
+        }
+
+        openFromHash();
+        window.addEventListener('hashchange', openFromHash);
     </script>
 </body>
 </html>
