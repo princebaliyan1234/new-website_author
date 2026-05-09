@@ -1,84 +1,100 @@
 // ============================================================
 //  SILENCE OF SCRIBES — projects.js
-//  Add or remove entries here to update "Recent Projects"
-//  on the homepage automatically. No HTML editing needed.
+//  Edit PROJECTS below to update "Recent Projects" on the
+//  homepage. Top 3 entries are shown. Most recent goes first.
 //
 //  Each entry:
-//    imgKey  → key from images.js  (e.g. 'lastSun')
-//    alt     → image alt text
-//    tag     → small label above title  (e.g. 'Cover Design — Illustrated')
-//    title   → card heading
-//    desc    → short description
-//    link    → 'books.html' or 'covers.html' or external URL
-//    linkText→ text on the arrow link  (e.g. 'Read More →')
+//    imgKey   → key from images.js  (e.g. 'lastSun')
+//    tag      → small label above title
+//    title    → card heading
+//    desc     → short description (keep under ~120 chars)
+//    link     → 'books.html' or 'covers.html'
+//    linkText → text on the arrow link
 // ============================================================
 
 window.PROJECTS = [
+
+    // ── ADD NEW ITEMS AT THE TOP ─────────────────────────────
+
+    {
+        imgKey:   'battleGearTournament1',
+        tag:      'Cover Design — Hand-Drawn',
+        title:    'Battle Gear Tournament',
+        desc:     'Fully hand-drawn anime sci-fi cover — sword master MC, neon-lit futuristic cityscape, zero AI tools.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
+    {
+        imgKey:   'firefliesOfDawn1',
+        tag:      'Cover Design — Fantasy',
+        title:    'Fireflies of Dawn',
+        desc:     'Ember-lit butterfly, ghostly clock face, cherry blossoms — timeless and achingly romantic.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
+    {
+        imgKey:   'curseOfGoldenSoul1',
+        tag:      'Cover Design — Fantasy',
+        title:    'Curse of Golden Soul',
+        desc:     'Gilded ring, decaying rose, fractured stone — beauty and ruin in perfect tension.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
+    {
+        imgKey:   'limitBreaker1',
+        tag:      'Cover Design — Action',
+        title:    'Limit Breaker: Reborn as a Hunter',
+        desc:     'White-haired hunter gripping an ice-blue sword on a skull-strewn battlefield — raw and intense.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
+    {
+        imgKey:   'demonicStreamer2',
+        tag:      'Cover Design — System',
+        title:    'Demonic Streamer System',
+        desc:     'Half human, half demon — a duality portrait split between two worlds and two versions.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
+    {
+        imgKey:   'angelOfDarkness1',
+        tag:      'Cover Design — Dark Fantasy',
+        title:    'Angel of Darkness',
+        desc:     'Fallen angel in obsidian armour before a blood-red moon — wings of shadow, sword in hand.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
+    {
+        imgKey:   'levelUpSleep1',
+        tag:      'Cover Design — LitRPG',
+        title:    'Level Up While I Sleep',
+        desc:     'Pyjama-wearing protagonist radiating explosive dual fire-and-lightning power — three versions.',
+        link:     'covers.html',
+        linkText: 'View Cover →',
+    },
     {
         imgKey:   'survivingCover',
-        alt:      'Surviving in the Freezing Apocalypse with My Alpha',
         tag:      'Novel — WebNovel',
         title:    'Surviving in the Freezing Apocalypse with My Alpha',
-        desc:     'A romance-fantasy survival story set in a world where a deadly frost storm turns people into the Frostborn.',
+        desc:     'A romance-fantasy survival story — deadly frost storm, Frostborn creatures, and a love that burns through the ice.',
         link:     'books.html',
         linkText: 'Read More →',
     },
-    {
-        imgKey:   'lastSun',
-        alt:      'The Last Sun Cover',
-        tag:      'Cover Design — Illustrated',
-        title:    'The Last Sun',
-        desc:     'An epic illustrated cover featuring a silhouetted rider beneath a grand twilight sky and a ghostly figure above.',
-        link:     'covers.html',
-        linkText: 'View Gallery →',
-    },
-    {
-        imgKey:   'vxv1',
-        alt:      'Villainess x Villain',
-        tag:      'Cover Design — WebNovel',
-        title:    'Villainess x Villain',
-        desc:     'A dark fantasy romance about two obsessed souls on opposing sides — beautifully dangerous and utterly captivating.',
-        link:     'covers.html',
-        linkText: 'View Gallery →',
-    },
-    {
-        imgKey:   'endWorld1',
-        alt:      'End World Tutorial',
-        tag:      'Cover Design — LitRPG',
-        title:    'End World Tutorial',
-        desc:     'A level-1 adventurer faces an apocalyptic sea beast — quest UI overlays, HP bars, and raw chaos in three colour variants.',
-        link:     'covers.html',
-        linkText: 'View Gallery →',
-    },
-    {
-        imgKey:   'daoReincarnation1',
-        alt:      'The Dao of Reincarnation',
-        tag:      'Cover Design — Cultivation',
-        title:    'The Dao of Reincarnation',
-        desc:     'Ink-wash aesthetics meet gold typography — a lone cultivator ascending through a hundred lives.',
-        link:     'covers.html',
-        linkText: 'View Gallery →',
-    },
-    {
-        imgKey:   'cultivatingSeclusion1',
-        alt:      'Cultivating in Seclusion for Ten Thousand Years',
-        tag:      'Cover Design — Xianxia',
-        title:    "Cultivating in Seclusion",
-        desc:     'Serene mountain meditation, cherry blossoms, and two loyal chickens — warm xianxia slice-of-life energy.',
-        link:     'covers.html',
-        linkText: 'View Gallery →',
-    },
+
 ];
 
-// ── Render into #recentProjectsGrid ──────────────────────────
+// ── Renderer — do not edit below this line ───────────────────
 function renderProjects() {
     const grid = document.getElementById('recentProjectsGrid');
     if (!grid || !window.IMAGES) return;
 
-    grid.innerHTML = window.PROJECTS.map(p => `
+    // Always show the first 3
+    const recent = window.PROJECTS.slice(0, 3);
+
+    grid.innerHTML = recent.map(p => `
         <div class="work-card glass-card scroll-reveal">
             <div class="work-image">
-                <img src="${window.IMAGES[p.imgKey] || ''}" alt="${p.alt}">
+                <img src="${window.IMAGES[p.imgKey] || ''}" alt="${p.title}" loading="lazy">
             </div>
             <div class="work-content">
                 <span class="work-tag">${p.tag}</span>
@@ -89,7 +105,7 @@ function renderProjects() {
         </div>
     `).join('');
 
-    // Re-trigger scroll-reveal observer for newly created cards
+    // Hook new cards into the scroll-reveal observer
     if (window._revealObserver) {
         grid.querySelectorAll('.scroll-reveal').forEach(el => {
             window._revealObserver.observe(el);
@@ -97,7 +113,6 @@ function renderProjects() {
     }
 }
 
-// Run after both images.js and the DOM are ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderProjects);
 } else {
